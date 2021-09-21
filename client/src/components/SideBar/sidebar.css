@@ -1,0 +1,74 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.sidebar h3,
+.sidebar h5 {
+  color: palevioletred;
+}
+
+.sidebar-form {
+  margin-top: 2rem;
+}
+
+.sidebar-input,
+.sidebar-textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-family: 'Poppins',
+    sans-serif;
+}
+
+.sidebar-textarea:focus {
+  outline: none;
+}
+
+
+.sidebar-button,
+.sidebar-button-clear {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+.sidebar-button {
+  background-color: palevioletred;
+  margin-bottom: 1rem;
+}
+
+.sidebar-button-clear {
+  background-color: #999;
+  margin-bottom: 3rem;
+}
+
+.touch-with-us {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icons-list {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: palevioletred;
+}

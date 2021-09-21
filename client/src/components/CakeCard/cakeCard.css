@@ -1,0 +1,40 @@
+.cakecard {
+  max-width: 300px;
+  border-radius: 3px;
+  background-color: aliceblue;
+  padding-bottom: 0.7rem;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.cakecard-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cakecard-buttons {
+  text-align: right;
+  /* margin: 0.3rem 0.7rem 0.3rem 0; */
+  margin-right: 0.8rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.cakecard-button {
+  border: none;
+  background-color: aqua;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cakecard-button:first-child {
+  margin-right: 0.7rem;
+}
+
+.cakecard:not(:nth-child(4n+0)) {
+  margin-right: 3.5rem;
+}

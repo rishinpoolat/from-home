@@ -1,0 +1,23 @@
+.loginpage {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 90vh;
+}
+
+.login-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.loginpage-footer-link {
+  color: teal
+}

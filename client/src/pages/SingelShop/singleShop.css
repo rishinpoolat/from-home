@@ -1,0 +1,63 @@
+.singleshop {
+  padding: 1rem 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.singleshop-banner-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.singleshop-title {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.singleshop-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.singleshop-body {
+  padding: 1rem;
+}
+
+.singleshop-desc {
+  margin: 1rem 0;
+}
+
+.singleshop-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.cakes {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 2.5rem;
+}
+
+.singleshop-rating {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+}
+
+.singleshop-review {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* justify-content: space-around; */
+  /* padding: 1.5rem; */
+}
