@@ -20,20 +20,23 @@ export default function HomePage() {
 
 
     return (
-        <div className='home'>
-            <div className='home-main'>
-                <header className="home-header">
+        <div className='df'>
+            <div className='home-main df fd-c'>
+                <header className="home-header ">
                     <h1>Trending</h1>
-                    <div className='home-trending'>
-                        <img src={headerImg1} alt="" className="home-header-img" />
-                        <img src={headerImg2} alt="" className="home-header-img" />
+                    <div className='homepage-trending df'>
+                      <img src={headerImg1} alt="" className="home-header-img" />
+                      <img src={headerImg2} alt="" className="home-header-img" />
+                      <img src={headerImg2} alt="" className="home-header-img" />
+                      <img src={headerImg2} alt="" className="home-header-img" />
                     </div>
                 </header>
-                <div className="home-shops">
+                    <h1>shops at calicut</h1>
+                <div className="home-shops df">
                     <Shops/>
                 </div>
             </div>
-            <div className="home-sidebar">
+            <div className="home-sidebar ai-c fd-c df">
                 <SideBar/>
             </div>
             <button className='home-right-drag-button'><i className="fas fa-less-than"></i></button>        

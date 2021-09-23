@@ -1,22 +1,28 @@
 import { Link } from 'react-router-dom';
 import './userRegister.css';
+import FileBase from 'react-file-base64';
 
 export default function UserRegister() {
-
-    const registerImg = 'https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNha2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
-
     return (
-        <div className='container'>
-            <div className='user-register'>
-                <img src={registerImg} alt="" className="register-img" />
-                <h3>Have food, Have fun</h3>
-                <form className='userregister-form'>
-                    <input className='register-input' placeholder='Name'/>
-                    <input className='register-input' placeholder='Email' type='email'/>
-                    <input className='register-input' placeholder='Phone Number' type='tel'/>
-                    <input className='register-input' type='password' placeholder='Password'/>
-                    <input className='register-input' type='password' placeholder='Confirm Password'/>
-                    <button className='submit-btn' type='submit'>Submit</button>
+        <div className='container df fd-c '>
+            <div className='df fd-c ai-c'>
+                <h2>Have food, Have fun</h2>
+                <form className='userregister-form ai-c fd-c df'>
+                    <input className='input' placeholder='Name'/>
+                    <input className='input' placeholder='Email' type='email'/>
+                    <input className='input' placeholder='Phone Number' type='tel'/>
+                    <div className='df ai-c propic'>
+                    <label>Photo </label>
+            
+                            <FileBase
+                                type='file'
+                                multiple={false}
+                                onDone={({ base64 }) => {}}
+                            />
+                    </div>        
+                    <input className='input' type='password' placeholder='Password'/>
+                    <input className='input' type='password' placeholder='Confirm Password'/>
+                    <button className='active-button' type='submit'>Submit</button>
                 </form>
             </div>
             <footer className='footer'>

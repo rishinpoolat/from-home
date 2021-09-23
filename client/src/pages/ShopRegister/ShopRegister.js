@@ -22,26 +22,19 @@ export default function ShopRegister() {
     }
 
     return (
-        <div className='shopregister'>
+        <div className='shopregister df ai-c fd-c'>
             <h3>Tell Us about your shop</h3>
-            <form className='shopregister-form' onSubmit={handleSubmit}>
-                <input className='shopregister-input' placeholder='Name of Shop' type='text' value={shopData.shopName} onChange={(e) => setShopData({ ...shopData, shopName: e.target.value})} name="shopName"/>
-                <input className='shopregister-input' placeholder='District' value={shopData.district} onChange={(e) => setShopData({ ...shopData, district: e.target.value})} name="district"/>
-                <input className='shopregister-input' placeholder='Owner Name' type='text' value={shopData.ownerName} onChange={(e) => setShopData({ ...shopData, ownerName: e.target.value})} name="ownerName"/>
-                <input className='shopregister-input' placeholder='Email' type='email' value={shopData.email} onChange={(e) => setShopData({ ...shopData, email: e.target.value})} name="email"/>
-                <input className='shopregister-input' placeholder='Phone' type='tel' value={shopData.shopPhone} onChange={(e) => setShopData({ ...shopData, shopPhone: e.target.value})} name="phone"/>
-                <input className='shopregister-input' placeholder='Address' value={shopData.address} onChange={(e) => setShopData({ ...shopData, address: e.target.value})} name="address"/>
-                <div className='shopregister-img-icons'>
-                    <div>
+            <form className='shopregister-form df fd-c ai-c' onSubmit={handleSubmit}>
+                <input className='input' placeholder='Name of Shop' type='text' value={shopData.shopName} onChange={(e) => setShopData({ ...shopData, shopName: e.target.value})} name="shopName"/>
+                <input className='input' placeholder='District' value={shopData.district} onChange={(e) => setShopData({ ...shopData, district: e.target.value})} name="district"/>
+                <input className='input' placeholder='Owner Name' type='text' value={shopData.ownerName} onChange={(e) => setShopData({ ...shopData, ownerName: e.target.value})} name="ownerName"/>
+                <input className='input' placeholder='Email' type='email' value={shopData.email} onChange={(e) => setShopData({ ...shopData, email: e.target.value})} name="email"/>
+                <input className='input' placeholder='Phone' type='tel' value={shopData.shopPhone} onChange={(e) => setShopData({ ...shopData, shopPhone: e.target.value})} name="phone"/>
+                <input className='input' placeholder='Address' value={shopData.address} onChange={(e) => setShopData({ ...shopData, address: e.target.value})} name="address"/>
+                <div className='shopregister-img-icons fd-c df'>
+                    <div className='shopregister-icon'>
                         <label>logo</label>
-                        {/* <label htmlFor="fileInput">
-                            <i className="shopregister-icon fas fa-plus"></i>
-                        </label>
-                        <input
-                            type="file"
-                            id="fileInput"
-                            // style={{ display: "none" }}
-                            onChange={(e) => setShopData({ ...shopData, logo: e.target.files[0]})}/> */}
+            
                             <FileBase
                                 type='file'
                                 multiple={false}
@@ -49,16 +42,9 @@ export default function ShopRegister() {
                             />
                     </div>
 
-                    <div>
+                    <div className='shopregister-icon'>
                         <label>banner</label>
-                        {/* <label htmlFor="fileInput">
-                            <i className="shopregister-icon fas fa-plus"></i>
-                        </label>
-                        <input
-                            type="file"
-                            id="fileInput"
-                            // style={{ display: "none" }}
-                            onChange={(e) => setShopData({ ...shopData, banner: e.target.files[1]})}/> */}
+                        
                         <FileBase
                                 type='file'
                                 multiple={false}
@@ -66,9 +52,9 @@ export default function ShopRegister() {
                             />
                     </div>
                 </div>
-                <textarea className='shopregister-textarea' name="description" rows="2" cols="35" placeholder='Description' value={shopData.description} onChange={(e) => setShopData({ ...shopData, description: e.target.value})}></textarea>
-                <button className='shopregister-submit-btn' type='submit'>Submit</button>
-                <button className='shopregister-clear-btn' onClick={clear}>Clear</button>
+                <textarea className='input shopregister-textarea' name="description" rows="2" cols="35" placeholder='Description' value={shopData.description} onChange={(e) => setShopData({ ...shopData, description: e.target.value})}></textarea>
+                <button className='active-button' type='submit'>Submit</button>
+                <button className='shopregister-clear-btn active-button ' onClick={clear}>Clear</button>
             </form> 
         </div>
     )
