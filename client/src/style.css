@@ -17,17 +17,19 @@ input:focus {
   cursor: pointer;
 }
 
-.df{
+.df {
   display: flex;
 }
-.ai-c{
+
+.ai-c {
   align-items: center;
 }
 
-.fd-c{
+.fd-c {
   flex-direction: column;
 }
-.input{
+
+.input {
   margin-bottom: 1rem;
   width: 300px;
   border: none;
@@ -37,7 +39,7 @@ input:focus {
   font-family: 'DM Sans', serif;
 }
 
-.active-button{
+.active-button {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
   background-color: rgb(70, 155, 154);
   color: #fff;

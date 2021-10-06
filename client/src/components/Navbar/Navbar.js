@@ -4,7 +4,7 @@ import './navbar.css'
 
 export default function Navbar() {
 
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     return (
         <nav className='navbar ai-c df'>
@@ -12,6 +12,9 @@ export default function Navbar() {
                 <Link className='nav-link-logo link' to="/">
                     <span className="from">From</span><span className="home">Home</span>
                 </Link>
+            </div>
+            <div>
+                <Link className='link recipielink' to='/recipie'>recipie</Link>
             </div>
             <div className="nav-links ai-c df">
                 {isLoggedIn ? 

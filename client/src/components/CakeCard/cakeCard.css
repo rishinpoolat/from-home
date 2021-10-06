@@ -15,16 +15,18 @@
   height: 200px;
   object-fit: cover;
 }
-.fas.fa-heart{
+
+.fas.fa-heart {
   color: #E63E6D;
 }
-.cakecard button{
+
+.cakecard button {
   width: 6rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   margin-top: 0.4rem;
 }
 
-.cakecard-buttons{
+.cakecard-buttons {
   justify-content: space-evenly;
 }

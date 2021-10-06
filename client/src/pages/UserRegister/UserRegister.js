@@ -13,7 +13,6 @@ export default function UserRegister() {
                     <input className='input' placeholder='Phone Number' type='tel'/>
                     <div className='df ai-c propic'>
                     <label>Photo </label>
-            
                             <FileBase
                                 type='file'
                                 multiple={false}

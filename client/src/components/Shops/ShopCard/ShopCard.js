@@ -5,7 +5,7 @@ function ShopCard({ shop }) {
   return (
   <div className='card fd-c df'>
     <div className='card-hero'>
-  <img className='card-hero' src={shop.banner} alt='card-hero'/>
+      <img className='card-hero' src={shop.banner} alt='card-hero'/>
     </div>
   <div className='card-content'>
     <div className='card-header ai-c df'>

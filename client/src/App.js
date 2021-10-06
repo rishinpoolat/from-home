@@ -10,9 +10,10 @@ import SingleShop from "./pages/SingelShop/SingleShop";
 import UserLogin from "./pages/UserLogin/UserLogin";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import ShopEdit from "./pages/ShopEdit/ShopEdit";
+import RecipiePage from "./pages/RecipiePage/RecipiePage";
 
 function App() {
-  const islogin = false;
+  const islogin = true;
 
   return (
     <div className="app">
@@ -46,9 +47,9 @@ function App() {
           <Route path="/shopedit">
             <ShopEdit/>
           </Route>
-          {/* <Route path="/settings">
-          {currentUser ? <Settings /> : <Login />}
-        </Route> */}
+          <Route path="/recipie">
+          <RecipiePage/>
+        </Route>
         </Switch>
       </Router>
     </div>

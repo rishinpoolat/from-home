@@ -47,8 +47,12 @@
   color: #111;
 }
 
-.home{ 
-  font-family: sans-serif;
+.home { 
+  font-family: 'DM Sans', sans-serif;
+}
+
+.recipielink {
+  color:rgb(18, 88, 87);
 }
 
 .from {

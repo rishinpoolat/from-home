@@ -34,22 +34,19 @@ export default function ShopRegister() {
                 <div className='shopregister-img-icons fd-c df'>
                     <div className='shopregister-icon'>
                         <label>logo</label>
-            
                             <FileBase
                                 type='file'
                                 multiple={false}
                                 onDone={({ base64 }) => setShopData({ ...shopData, logo: base64 })}
                             />
                     </div>
-
                     <div className='shopregister-icon'>
                         <label>banner</label>
-                        
                         <FileBase
                                 type='file'
                                 multiple={false}
                                 onDone={({ base64 }) => setShopData({ ...shopData, banner: base64 })}
-                            />
+                        />
                     </div>
                 </div>
                 <textarea className='input shopregister-textarea' name="description" rows="2" cols="35" placeholder='Description' value={shopData.description} onChange={(e) => setShopData({ ...shopData, description: e.target.value})}></textarea>
