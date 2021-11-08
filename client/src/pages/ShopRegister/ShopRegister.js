@@ -6,12 +6,13 @@ import { createNewShop } from '../../actions/shops';
 
 import './shopRegister.css'
 
-export default function ShopRegister() {
+const ShopRegister = () => {
   const [shopData, setShopData] = useState({ shopName: '', district: '', ownerName: '', email: '', shopPhone: '', address: '', logo: '',  banner: '', description: ''});
+  
   const dispatch = useDispatch();
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(createNewShop(shopData));
         
@@ -73,3 +74,6 @@ export default function ShopRegister() {
         </div>
     )
     }
+
+
+export default ShopRegister;

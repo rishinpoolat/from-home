@@ -1,7 +1,7 @@
 import React from 'react';
 import './shopCard.css'
 
-function ShopCard({ shop }) {
+export default function ShopCard ({ shop }) {
   return (
     <div className='card-container'>
   <div className='card'>
@@ -27,7 +27,7 @@ function ShopCard({ shop }) {
   )
 }
 
-export default ShopCard
+
 
 
 

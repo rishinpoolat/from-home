@@ -1,10 +1,12 @@
 import express from 'express';
-
-import User from '../models/User.js';
-import Shops from '../models/Shops.js';
 import { getShops, createShop } from '../controllers/shops.js';
 
 const router = express.Router();
+
+// import User from '../models/User.js';
+// import Shops from '../models/Shops.js';
+
+
 router.get('/', getShops);
 
 // create shop 
@@ -55,14 +57,14 @@ router.post('/shopregister', createShop);
 // });
 
 // get shop
-router.get('/:id', async (req, res) => {
-    try {
-      const shop = await Shops.findById(req.params.id);
-      res.status(200).json(shop);
-    } catch (error) {
-      res.status(500).json(error);
-    }
-});
+// router.get('/:id', async (req, res) => {
+//     try {
+//       const shop = await Shops.findById(req.params.id);
+//       res.status(200).json(shop);
+//     } catch (error) {
+//       res.status(500).json(error);
+//     }
+// });
 
 // get all shops 
 

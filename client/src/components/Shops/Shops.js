@@ -1,11 +1,11 @@
 import React from 'react';
-import { CircularProgress} from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import ShopCard from './ShopCard/ShopCard';
 
 import './shops.css'
 
-export default function Shops() {
+const Shops  = () => {
   const shops = useSelector((state) => state.shops);
 
   console.log(shops);
@@ -20,5 +20,7 @@ export default function Shops() {
       ))}
       </>
     )
-  )
+  );
 }
+
+export default Shops;

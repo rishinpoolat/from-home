@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const  shopSchema = mongoose.Schema(
+const shopSchema = mongoose.Schema(
   {
     shopName: {
       type: String,
@@ -42,6 +42,6 @@ const  shopSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Shops = mongoose.model('Shops', shopSchema);
+var Shops = mongoose.model('Shops', shopSchema);
 
 export default Shops;

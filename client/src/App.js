@@ -1,9 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import ShopRegister from "./pages/ShopRegister/ShopRegister";
 import HomePage from "./pages/HomePage/HomePage";
 import UserRegister from "./pages/UserRegister/UserRegister";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./style.css";
 import SingleShop from "./pages/SingelShop/SingleShop";
