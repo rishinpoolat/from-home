@@ -1,35 +1,9 @@
-.register-input {
-    color: black;
-    border: none;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-}
-
-.register-input, .submit-btn {
-    width: 300px;
-}
-
-input:focus {
-    outline: none;
-}
-
 .container {
     text-align: center;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     padding: 2rem 0;
     height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3),
-         rgba(0, 0, 0, 0.3)),
-    url('https://images.unsplash.com/photo-1566121933407-3c7ccdd26763?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGNha2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color: #E3FDFD;
 }
 
 .register-img {
@@ -39,36 +13,19 @@ input:focus {
     margin-bottom: 1rem;
 }
 
-.user-register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.submit-btn {
-    border: none;
-    margin-top: 0.3rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background-color: #00ADB5;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-    font-size: 1rem;
-    cursor: pointer;
-}
-
 .userregister-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
     padding: 1rem 2rem;
-    border-radius: 5px;
 }
 
 .register-footer-link {
-    text-decoration: none;
-    color: white;
-
+    color:#000;
 }
 
+.propic {
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+.propic label{
+    margin-right: 1rem;
+}

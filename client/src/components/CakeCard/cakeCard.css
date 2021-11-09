@@ -7,6 +7,7 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 2.5rem;
+  margin-right: 2rem;
 }
 
 .cakecard-img {
@@ -15,26 +16,17 @@
   object-fit: cover;
 }
 
-.cakecard-buttons {
-  text-align: right;
-  /* margin: 0.3rem 0.7rem 0.3rem 0; */
-  margin-right: 0.8rem;
+.fas.fa-heart {
+  color: #E63E6D;
+}
+
+.cakecard button {
+  width: 6rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
+  margin-top: 0.4rem;
 }
 
-.cakecard-button {
-  border: none;
-  background-color: aqua;
-  padding: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.2);
-}
-
-.cakecard-button:first-child {
-  margin-right: 0.7rem;
-}
-
-.cakecard:not(:nth-child(4n+0)) {
-  margin-right: 3.5rem;
+.cakecard-buttons {
+  justify-content: space-evenly;
 }

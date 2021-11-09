@@ -9,6 +9,8 @@ import "./style.css";
 import SingleShop from "./pages/SingelShop/SingleShop";
 import UserLogin from "./pages/UserLogin/UserLogin";
 import UserProfile from "./pages/UserProfile/UserProfile";
+import ShopEdit from "./pages/ShopEdit/ShopEdit";
+import RecipiePage from "./pages/RecipiePage/RecipiePage";
 
 function App() {
   const islogin = true;
@@ -42,10 +44,12 @@ function App() {
           {/* <Route path="/post/:id">
           <Single />
         </Route> */}
-          {/* <Route path="/write">{currentUser ? <Write /> : <Login />}</Route> */}
-          {/* <Route path="/settings">
-          {currentUser ? <Settings /> : <Login />}
-        </Route> */}
+          <Route path="/shopedit">
+            <ShopEdit/>
+          </Route>
+          <Route path="/recipie">
+          <RecipiePage/>
+        </Route>
         </Switch>
       </Router>
     </div>

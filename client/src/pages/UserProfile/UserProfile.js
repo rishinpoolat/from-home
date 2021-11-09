@@ -2,23 +2,34 @@ import { Link } from 'react-router-dom'
 import './userProfile.css'
 
 export default function UserProfile() {
+
+  const hasShop = false;
+
   return (
-    <div className='userprofile'>
-      <div className="userprofile-main">
-        <div className="userprofile-left">
+    <div className='userprofile df fd-c ai-c'>
+      <div className="userprofile-main df">
+        <div className="userprofile-left df fd-c">
           <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="" className="userprofile-pic" /> 
-          <button className="userprofile-edit-button">Edit Profile</button>
+          <button className="active-button">Edit Profile</button>
         </div>
-        <div className="userprofile-right">
-          <h3>Name</h3>
-          <span>email</span>
-          <span>phone</span>
-          <span>location</span>
+        <div className="userprofile-right fd-c">
+          <h3>Name :rishin poolat</h3>
+          <span>email:rishinpooolat@gmail.com</span>
+          <span>phone:e7977987</span>
+          <span>location:7787789787987w87q6gdsj</span>
         </div>
       </div>
-      <footer className="userprofile-footer">
-        <h3>Want to start a Shop ?</h3>
-        <Link className='link' to='/shops/shopregister'>Start a shop</Link>
+      <footer className="footer">
+      {hasShop? <>
+        <h3>Customize shop</h3>
+        <Link className='shop-btn link' to='/shopedit'>Edit my shop</Link>
+      </> : 
+      <>
+      <h3>Want to start a Shop ?</h3>
+        <Link className='shop-btn link' to='/shops/shopregister'>Start a shop</Link>
+      </>
+      }
+        
       </footer>
     </div>
   )

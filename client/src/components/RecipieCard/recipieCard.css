@@ -1,0 +1,78 @@
+.recipiecard {
+    max-width: 300px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+    margin-right: 2rem;
+    overflow: hidden;
+    color: grey;
+}
+
+.recipiecard-header {
+    padding: 1rem;
+    background-color: #CBF1F5;
+}
+
+.recipiecard-header h3 {
+    color: rgb(70,155,154);
+}
+
+.recipie-header-name {
+    margin-left: 1rem;
+}
+
+.recipie-user {
+    color: grey;
+    margin-bottom: 1rem;
+}
+
+.recipie-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.recipie-body {
+    padding: 1rem;
+}
+
+.recipie-ingridients {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.recipie-ingridients ul {
+    list-style: none;
+}
+
+.recipie-ingridients h4 {
+    color:#27496D ;
+}
+
+.recipie-des {
+    width: 70%;
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    word-wrap: break-word;
+}
+
+.recipie-des h4{
+    color:#27496D ;
+}
+
+.recipie-bottom {
+    padding: 1rem;
+}
+
+.recipie-bottom span {
+    font-size: 0.8rem;
+}
+
+.fas.fa-thumbs-up {
+    color: navy;
+}
+
