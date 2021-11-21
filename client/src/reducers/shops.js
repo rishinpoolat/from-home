@@ -1,12 +1,14 @@
-/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
-export default (shops = [], action) => {
+import { FETCH_ALL, CREATE } from '../constants/actionTypes';
+
+const shops =  (shops = [], action) => {
   switch (action.type) {
-    case 'FETCH_ALL':
+    case FETCH_ALL:
       return action.payload;
-    case 'CREATE':
+    case CREATE:
       return [...shops, action.payload];
     default:
       return shops;
   }
 }
 
+export default shops;

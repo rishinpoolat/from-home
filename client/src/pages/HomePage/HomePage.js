@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getShops } from '../../actions/shops';
-import Shops from '../../components/Shops/Shops';
+import ShopCard from '../../components/Shops/ShopCard/ShopCard';
 import SideBar from '../../components/SideBar/SideBar';
 import './homepage.css'
 
 export default function HomePage() {
 
     const dispatch = useDispatch();
+    const shops = useSelector((state) => state.shops);
+
+    console.log(shops);
 
     useEffect(() => {
         dispatch(getShops());
@@ -31,9 +34,21 @@ export default function HomePage() {
                       <img src={headerImg2} alt="" className="home-header-img" />
                     </div>
                 </header>
-                    <h1>shops at calicut</h1>
+                    <h1>Cake Shops at Calicut</h1>
                 <div className="home-shops df">
-                    <Shops/>
+                    {!shops.length ? 
+                        (<>
+                          Loading...
+                        </> ) : 
+                        ( <>
+                            {shops.map((shop) => (
+                            <div key={shop._id}>
+                                <ShopCard shop={shop}/>
+                            </div>
+                          ))}
+                          </>
+                        )
+                    }
                 </div>
             </div>
             <div className="home-sidebar ai-c fd-c df">

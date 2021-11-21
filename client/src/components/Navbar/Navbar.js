@@ -4,7 +4,7 @@ import './navbar.css'
 
 export default function Navbar() {
 
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     return (
         <nav className='navbar ai-c df'>
@@ -13,9 +13,9 @@ export default function Navbar() {
                     <span className="from">From</span><span className="home">Home</span>
                 </Link>
             </div>
-            <div>
+            {/* <div>
                 <Link className='link recipielink' to='/recipie'>recipie</Link>
-            </div>
+            </div> */}
             <div className="nav-links ai-c df">
                 {isLoggedIn ? 
                 <>
@@ -24,7 +24,7 @@ export default function Navbar() {
                     <span>Marvin</span>
                 </div>
                 <Link to='/userprofile'>
-                    <img className='user-pic df' src="https://randomuser.me/api/portraits/men/42.jpg" alt="" />
+                    <img className='user-pic df' src="https://thispersondoesnotexist.com/image" alt="" />
                 </Link>
                 </> : 
                 <Link className='nav-link link' to='/userlogin'>Register/Login</Link>}

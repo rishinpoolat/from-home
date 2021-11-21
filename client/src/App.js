@@ -4,16 +4,15 @@ import Navbar from "./components/Navbar/Navbar";
 import ShopRegister from "./pages/ShopRegister/ShopRegister";
 import HomePage from "./pages/HomePage/HomePage";
 import UserRegister from "./pages/UserRegister/UserRegister";
-
-import "./style.css";
 import SingleShop from "./pages/SingelShop/SingleShop";
 import UserLogin from "./pages/UserLogin/UserLogin";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import ShopEdit from "./pages/ShopEdit/ShopEdit";
 import RecipiePage from "./pages/RecipiePage/RecipiePage";
+import "./style.css";
 
 function App() {
-  const islogin = true;
+  const islogin = false;
 
   return (
     <div className="app">

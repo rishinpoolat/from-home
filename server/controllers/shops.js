@@ -6,7 +6,7 @@ const router = express.Router();
 export const getShops = async (req, res) => {
     try {
       const shops = await Shops.find();
-      console.log('helo');
+      // console.log('helo');
       res.status(200).json(shops);
     } catch (error) {
       res.status(404).json(error)
@@ -14,8 +14,8 @@ export const getShops = async (req, res) => {
 }
 
 export const createShop = async (req, res) => {
-  const { shopName, district, ownerName, email, shopPhone, address, logo, banner, description } = req.body;
-  const newShop = new Shops({ shopName, district, ownerName, email, shopPhone, address, logo, banner, description });
+  const { shopName, district, ownerName, email, shopPhone, address, logo, banner, description, cakes } = req.body;
+  const newShop = new Shops({ shopName, district, ownerName, email, shopPhone, address, logo, banner, description, cakes });
   try {
     await newShop.save();
     res.status(200).json(newShop);

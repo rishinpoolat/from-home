@@ -38,6 +38,10 @@ const shopSchema = mongoose.Schema(
       type: String,
       default: ""
     },
+    cakes: {
+      type: Array,
+      required: true
+    }
   },
   { timestamps: true }
 );

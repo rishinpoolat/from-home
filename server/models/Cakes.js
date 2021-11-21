@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const districtsSchema = mongoose.Schema(
+const cakesSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -11,6 +11,6 @@ const districtsSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const districts = mongoose.model('districts', districtsSchema);
+const Cakes = mongoose.model('cakes', cakesSchema);
 
-export default districts;
+export default Cakes;
