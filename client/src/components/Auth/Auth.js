@@ -2,20 +2,30 @@ import { useState } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { signup, signin } from '../../actions/auth';
 import './auth.css';
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
 
 export default function Auth() {
 
   const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleSubmit = () => {
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(isSignup) {
+      dispatch(signup(formData, history))
+    } else {
+      dispatch(signin(formData, history))
+    }
   }
 
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   const switchMode = () => {
@@ -48,13 +58,13 @@ export default function Auth() {
           <form className='login-form ai-c fd-c df' onSubmit={handleSubmit}>
             { isSignup && (
               <>
-                <input value="firstName" className='input' placeholder='First Name' type='text' onChange={handleChange} autoFocus/>
-                <input value="lastName" className='input' placeholder='Last Name' type='text' onChange={handleChange}/>
+                <input name='firstName' className='input' placeholder='First Name' type='text' onChange={handleChange} autoFocus/>
+                <input name='lastName' className='input' placeholder='Last Name' type='text' onChange={handleChange}/>
               </>
             )}
-              <input className='input' placeholder='Email' type='email'/>
-              <input className='input' type='password' placeholder='Password'/>
-              { isSignup &&  <input className='input' type='password' placeholder='Confirm Password'></input>}
+              <input name='email' className='input' placeholder='Email' type='email' onChange={handleChange}/>
+              <input name='password' className='input' type='password' placeholder='Password' onChange={handleChange}/>
+              { isSignup &&  <input name='confirmPassword' className='input' type='password' placeholder='Confirm Password' onChange={handleChange}></input>}
               <button className='active-button' type='submit'>Sign { isSignup ? 'Up' : 'In'}</button>
               <GoogleLogin 
                 clientId="928467156334-3b821q3npa4ga19akreh1miudpcm32v8.apps.googleusercontent.com"
@@ -64,7 +74,7 @@ export default function Auth() {
                 onSuccess={googleSuccess}
                 onFailure={googleFailure}
                 cookiePolicy='single_host_origin'
-              />
+                />
           </form>
       </div>
       <footer className='footer'>

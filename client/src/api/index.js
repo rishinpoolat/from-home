@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
-// const url = 'http://localhost:5000/shops'; confirm which url should use
+const API = axios.create({ baseURL: 'http://localhost:8000' });
 
-export const fetchShops = () => axios.get(`${url}/shops`);
-export const createShop = (newShop) => axios.post(`${url}/shops/shopregister`, newShop);
+
+export const fetchShops = () => API.get(`/shops`);
+export const createShop = (newShop) => API.post(`/shops/shopregister`, newShop);
+
+export const signIn = (formData) => API.post(`/user/signin`, formData);
+export const signUp = (formData) => API.post(`/user/signup`, formData);

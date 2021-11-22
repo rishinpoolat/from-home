@@ -3,10 +3,8 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-// import authRoute from './routes/auth.js';
-// import userRoute from './routes/users.js';
 import shopsRoute from './routes/shops.js';
-// import districtRoute from './routes/districts.js';
+import userRoute from './routes/users.js'
 import cakeRoute from './routes/cakes.js'
 
 const app = express();
@@ -17,14 +15,12 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use('/shops', shopsRoute);
+app.use('/user', userRoute)
 app.use('/cakes', cakeRoute);
 
 const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT;
 
-// app.use('/auth', authRoute);
-// app.use('/users', userRoute);
-// app.use('/districts', districtRoute);
 
 mongoose.connect(CONNECTION_URL, { 
   useNewUrlParser: true, 
