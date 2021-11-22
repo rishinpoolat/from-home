@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import './userProfile.css'
 
 export default function UserProfile() {
+
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const location = useLocation();
+
+    useEffect(() => {
+        // const token = user?.token;
+
+        // jwt
+
+        setUser(JSON.parse(localStorage.getItem('profile')))
+    }, [location]);
 
   const hasShop = false;
 
@@ -9,13 +21,12 @@ export default function UserProfile() {
     <div className='userprofile df fd-c ai-c'>
       <div className="userprofile-main df">
         <div className="userprofile-left df fd-c">
-          <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="" className="userprofile-pic" /> 
+          <img src={user.result.imageUrl} alt="" className="userprofile-pic" /> 
           <button className="active-button">Edit Profile</button>
         </div>
         <div className="userprofile-right fd-c">
-          <h3>Name :rishin poolat</h3>
-          <span>email:rishinpooolat@gmail.com</span>
-          <span>phone:e7977987</span>
+          <h3>Name : { user.result.name}</h3>
+          <span>email: {user.result.email}</span>
           <span>location:7787789787987w87q6gdsj</span>
         </div>
       </div>

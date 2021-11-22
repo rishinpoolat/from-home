@@ -6,11 +6,19 @@
   min-height: 90vh;
 }
 
-.login-form {
-  margin-top: 2rem;
+.loginpage h4 {
+  margin: 0.5rem 0;
 }
 
-.footer h3{
+.login-form button {
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  margin-top: 1.5rem;
+}
+
+.footer h3 {
   margin-bottom: 0.6rem;
   color: #484274;
 }

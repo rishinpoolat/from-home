@@ -1,10 +1,29 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 import './navbar.css'
 
 export default function Navbar() {
 
-    const isLoggedIn = false;
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+
+    const logout = () => {
+        dispatch({ type: 'LOGOUT' });
+        history.push('/');
+        setUser(null)
+    }
+
+    useEffect(() => {
+        // const token = user?.token;
+
+        // jwt
+
+        setUser(JSON.parse(localStorage.getItem('profile')))
+    }, [location]);
 
     return (
         <nav className='navbar ai-c df'>
@@ -17,17 +36,18 @@ export default function Navbar() {
                 <Link className='link recipielink' to='/recipie'>recipie</Link>
             </div> */}
             <div className="nav-links ai-c df">
-                {isLoggedIn ? 
+                {user ? 
                 <>
                 <div className="nav-link-name fd-c ai-c df">
                     <span>Hi</span>
-                    <span>Marvin</span>
+                    <span>{user.result.name}</span>
                 </div>
                 <Link to='/userprofile'>
-                    <img className='user-pic df' src="https://thispersondoesnotexist.com/image" alt="" />
+                    <img className='user-pic df' src={user.result.imageUrl} alt="" />
                 </Link>
+                <Link className='nav-link link' to='/' onClick={logout}>Logout</Link>
                 </> : 
-                <Link className='nav-link link' to='/userlogin'>Register/Login</Link>}
+                <Link className='nav-link link' to='/auth'>Sign In</Link>}
             </div>
                 
         </nav>
