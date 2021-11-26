@@ -1,5 +1,5 @@
 import express from 'express';
-import { getShops, createShop } from '../controllers/shops.js';
+import { getShops, createShop, getShop } from '../controllers/shops.js';
 
 const router = express.Router();
 
@@ -8,6 +8,7 @@ const router = express.Router();
 
 
 router.get('/', getShops);
+router.get('/:id', getShop);
 
 // create shop 
 router.post('/shopregister', createShop);
@@ -55,19 +56,5 @@ router.post('/shopregister', createShop);
 //     res.status(500).json(error);
 //   }
 // });
-
-// get shop
-// router.get('/:id', async (req, res) => {
-//     try {
-//       const shop = await Shops.findById(req.params.id);
-//       res.status(200).json(shop);
-//     } catch (error) {
-//       res.status(500).json(error);
-//     }
-// });
-
-// get all shops 
-
-
 
 export default router;

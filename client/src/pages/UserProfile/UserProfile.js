@@ -21,7 +21,7 @@ export default function UserProfile() {
     <div className='userprofile df fd-c ai-c'>
       <div className="userprofile-main df">
         <div className="userprofile-left df fd-c">
-          <img src={user.result.imageUrl} alt="" className="userprofile-pic" /> 
+          <img src={user?.result?.imageUrl || `https://avatars.dicebear.com/api/initials/${user.result.name}")}.svg`} alt="" className="userprofile-pic" /> 
           <button className="active-button">Edit Profile</button>
         </div>
         <div className="userprofile-right fd-c">

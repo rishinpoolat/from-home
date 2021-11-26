@@ -11,6 +11,7 @@ export default function Navbar() {
     const history = useHistory();
     const location = useLocation();
 
+
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
         history.push('/');
@@ -43,7 +44,7 @@ export default function Navbar() {
                     <span>{user.result.name}</span>
                 </div>
                 <Link to='/userprofile'>
-                    <img className='user-pic df' src={user.result.imageUrl} alt="" />
+                    <img className='user-pic df' src={user?.result?.imageUrl || `https://avatars.dicebear.com/api/initials/${user.result.name}")}.svg`} alt={user?.result?.name} />
                 </Link>
                 <Link className='nav-link link' to='/' onClick={logout}>Logout</Link>
                 </> : 

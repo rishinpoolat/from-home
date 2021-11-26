@@ -10,6 +10,15 @@ export const getShops =  () => async (dispatch) => {
   }
 };
 
+export const getShop =  (id) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchShop(id);
+    dispatch({ type: 'FETCH_SHOP', payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const createNewShop = (shop) => async (dispatch) => {
   try {
     const { data } = await api.createShop(shop);
