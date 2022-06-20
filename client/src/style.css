@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 input:focus {
@@ -29,6 +29,10 @@ input:focus {
   flex-direction: column;
 }
 
+.jc-sb {
+  justify-content: space-between;
+}
+
 .input {
   margin-bottom: 1rem;
   width: 300px;
@@ -36,7 +40,7 @@ input:focus {
   padding: 0.5rem;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  font-family: 'DM Sans', serif;
+  font-family: "DM Sans", serif;
 }
 
 .active-button {
@@ -52,6 +56,7 @@ input:focus {
 
 .app {
   position: relative;
+  overflow: hidden;
 }
 
 .app::before {
@@ -74,6 +79,10 @@ input:focus {
 }
 
 @keyframes fade-out {
-  0% { right: 0 }
-  100% { right: -3000px }
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -3000px;
+  }
 }
