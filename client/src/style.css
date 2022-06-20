@@ -29,6 +29,10 @@ input:focus {
   flex-direction: column;
 }
 
+.bn {
+  border: none;
+}
+
 .input {
   margin-bottom: 1rem;
   width: 300px;
@@ -54,7 +58,7 @@ input:focus {
   position: relative;
 }
 
-.app::before {
+/* .app::before {
   content: "Hello";
   width: 100vw;
   font-size: 6rem;
@@ -76,4 +80,4 @@ input:focus {
 @keyframes fade-out {
   0% { right: 0 }
   100% { right: -3000px }
-}
+} */

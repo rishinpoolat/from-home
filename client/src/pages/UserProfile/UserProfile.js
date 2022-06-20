@@ -16,6 +16,7 @@ export default function UserProfile() {
     }, [location]);
 
   const hasShop = false;
+  console.log(user);
 
   return (
     <div className='userprofile df fd-c ai-c'>

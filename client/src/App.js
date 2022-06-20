@@ -8,10 +8,11 @@ import SingleShop from "./pages/SingelShop/SingleShop";
 import UserProfile from "./pages/UserProfile/UserProfile";
 import ShopEdit from "./pages/ShopEdit/ShopEdit";
 import RecipiePage from "./pages/RecipiePage/RecipiePage";
+import Cart from "./pages/Cart/Cart";
 import Auth from "./components/Auth/Auth";
 import "./style.css";
 
-function App() {
+const App = () => {
   
   return (
     <div className="app">
@@ -33,14 +34,14 @@ function App() {
           <Route path="/shops/:shopId">
             <SingleShop />
           </Route>
-          {/* <Route path="/post/:id">
-          <Single />
-        </Route> */}
           <Route path="/shopedit">
             <ShopEdit/>
           </Route>
           <Route path="/recipie">
           <RecipiePage/>
+        </Route>
+        <Route path="/cart">
+        <Cart/>
         </Route>
         </Switch>
       </Router>
