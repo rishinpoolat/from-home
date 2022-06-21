@@ -11,6 +11,7 @@ import RecipiePage from "./pages/RecipiePage/RecipiePage";
 import Cart from "./pages/Cart/Cart";
 import Auth from "./components/Auth/Auth";
 import "./style.css";
+import Admin from "./pages/Admin/Admin";
 
 const App = () => {
   
@@ -42,6 +43,9 @@ const App = () => {
         </Route>
         <Route path="/cart">
         <Cart/>
+        </Route>
+        <Route path="/admin/:id">
+        <Admin/>
         </Route>
         </Switch>
       </Router>

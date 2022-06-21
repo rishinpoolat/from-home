@@ -1,0 +1,19 @@
+.newproduct {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(153, 153, 153, 0.7);
+}
+
+.newproduct-container{
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+}
+
+.newproduct h2{
+    margin-bottom: 1rem;
+}
+
+.newproduct form{
+    margin-bottom: 1rem;
+}

@@ -1,4 +1,4 @@
-.cart_items{
+.cart-items{
    padding: 0.5rem;
    border: 1px solid gray;
    margin-bottom: 1rem;
@@ -6,22 +6,22 @@
     width: 380px;
 }
 
-.cart_img{
+.cart-img{
     width: 10rem;
     height: 10rem;
     margin-right: 1rem;
 }
 
-.cart_right {
+.cart-right {
     text-align: left;
     justify-content: flex-start;
 }
 
-.cart_item_name {
+.cart-item-name {
     font-size: 1rem;
 }
 
-.cart_item_name span {
+.cart-item-name span {
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -33,12 +33,12 @@
     cursor: pointer;
 }
 
-.cart_item_qty {
+.cart-item-qty {
     margin: 0.5rem;
 }
 
 
-.cart_btn {
+.cart-btn {
     border: none;
     background-color: rgb(70, 155, 154);
     padding: 0.5rem 1rem;
