@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,55 +14,58 @@ import Cart from "./pages/Cart/Cart";
 import Auth from "./components/Auth/Auth";
 import "./style.css";
 import Admin from "./pages/Admin/Admin";
+import { useDispatch, useSelector } from "react-redux";
+import { getShops } from "./actions/shops";
 
 const App = () => {
-
   const dispatch = useDispatch();
+  const shops = useSelector((state) => state.shops);
 
-    const recipes = useSelector((state) => state.recipe);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
-    console.log(recipes);
+  console.log(shops);
 
-    useEffect(() => {
-        dispatch(getRecipes);
-    }, [dispatch]);
-  
+  useEffect(() => {
+    dispatch(getShops());
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [dispatch]);
+
   return (
     <div className="app">
       <Router>
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage shops={shops} />
           </Route>
           <Route path="/auth">
-             <Auth />
+            <Auth />
           </Route>
           <Route path="/shops/shopregister">
-            <ShopRegister />
+            <ShopRegister user={user} />
           </Route>
           <Route path="/userprofile">
-            <UserProfile />
+            <UserProfile user={user} />
           </Route>
           <Route path="/shops/:shopId">
             <SingleShop />
           </Route>
           <Route path="/shopedit">
-            <ShopEdit/>
+            <ShopEdit />
           </Route>
           <Route path="/recipie">
-          <RecipiePage/>
-        </Route>
-        <Route path="/cart">
-        <Cart/>
-        </Route>
-        <Route path="/admin/:id">
-        <Admin/>
-        </Route>
+            <RecipiePage />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="/admin/:id">
+            <Admin />
+          </Route>
         </Switch>
       </Router>
     </div>
   );
-}
+};
 
 export default App;
