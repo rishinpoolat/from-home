@@ -1,8 +1,16 @@
 .admin-container{
     padding: 1rem 2rem;
     position: relative;
+    flex: 4;
+    
 }
+.admin-left{
+    flex: 1;
+    background-color: rgb(22, 138, 138);
+}
+.admin-full{
 
+}
 .admin-products{
     padding: 1rem;
     flex: 1;
@@ -15,7 +23,9 @@
     flex: 1;
     text-align: center;
 }
-
+.right-top{
+    height: 300px;
+}
 .admin-products h2{
     margin-bottom: 1rem;
 }
@@ -23,10 +33,13 @@
 .admin-window {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
     z-index: 10;
+}
+.admin-card{
+    height: 250px;
+    width: 250px;
+    background-color: black;
 }
 
 .close-btn {

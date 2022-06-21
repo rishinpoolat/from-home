@@ -1,16 +1,30 @@
-import './sidebar.css'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { createRecipe } from "../../actions/recipe";
+import './sidebar.css'
 
 function SideBar() {
+
+  const [recipe, setRecipe] = useState({ userId: "", name: "", ingredients: "", description: "" });
+
+  const dispatch = useDispatch();
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(recipe);
+    dispatch(createRecipe(recipe));
+  }
+
   return (
     <div className='sidebar fd-c ai-c df'>
       <h2>Have a Recipie ? </h2>
       <h4>Share with us</h4>
-      <form className="sidebar-form" onSubmit={() => {}}>
-        <input type="text" className="sidebar-input input" placeholder='Name of Item'/>
-        <input type="text" className="sidebar-input input" placeholder='Ingridients'/>
-        <textarea className='sidebar-textarea input' name="recipie" rows="10" cols="35" placeholder='Enter your recipie' onChange={(e) => {}}></textarea>  
-        <button className="active-button">Share</button>
+      <form className="sidebar-form" onSubmit={handleSubmit}>
+        <input onChange={(e) => setRecipe({ ...recipe, name: e.target.value })} type="text" className="sidebar-input input" placeholder='Name of Item'/>
+        <input onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value })} type="text" className="sidebar-input input" placeholder='Ingridients'/>
+        <textarea onChange={(e) => setRecipe({ ...recipe, description: e.target.value })} className='sidebar-textarea input' name="recipie" rows="10" cols="35" placeholder='Enter your recipie' ></textarea>  
+        <button onClick={handleSubmit} className="active-button">Share</button>
         <button className="sidebar-button-clear link active-button">Clear</button>
       </form>
       <div className="touch-with-us fd-c df">

@@ -15,4 +15,4 @@ function Recipie() {
   )
 }
 
-export default Recipie
+export default Recipie;

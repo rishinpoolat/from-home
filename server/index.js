@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import shopsRoute from "./routes/shops.js";
 import userRoute from "./routes/users.js";
 import cakeRoute from "./routes/cakes.js";
+import recipeRoute from "./routes/recipe.js";
 
 const app = express();
 dotenv.config();
@@ -15,8 +16,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/shops", shopsRoute);
+app.use("/recipe", recipeRoute);
 app.use("/user", userRoute);
 app.use("/cakes", cakeRoute);
+
 app.get("/", (req, res) => {
   res.send("Helo to my cake shop");
 });
@@ -28,7 +31,6 @@ mongoose
   .connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // useCreateIndex: true
   })
   .then(() =>
     app.listen(PORT, () =>
@@ -37,4 +39,4 @@ mongoose
   )
   .catch((error) => console.log(error.message));
 
-// MONGODB_URL = mongodb+srv://ziifoo:ziifoo0909@cluster0.7kib8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+

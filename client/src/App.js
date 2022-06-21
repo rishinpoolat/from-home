@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./components/Navbar/Navbar";
 import ShopRegister from "./pages/ShopRegister/ShopRegister";
 import HomePage from "./pages/HomePage/HomePage";
+import { getRecipes } from './actions/recipe';
 
 import SingleShop from "./pages/SingelShop/SingleShop";
 import UserProfile from "./pages/UserProfile/UserProfile";
@@ -14,6 +16,16 @@ import "./style.css";
 import Admin from "./pages/Admin/Admin";
 
 const App = () => {
+
+  const dispatch = useDispatch();
+
+    const recipes = useSelector((state) => state.recipe);
+
+    console.log(recipes);
+
+    useEffect(() => {
+        dispatch(getRecipes);
+    }, [dispatch]);
   
   return (
     <div className="app">

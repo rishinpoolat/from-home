@@ -1,16 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { getRecipes } from '../../actions/recipe';
 import RecipieCard from '../../components/RecipieCard/RecipieCard'
 import "./recipiePage.css";
+
 export default function RecipiePage() {
+
     return (
         <div className='df recipiepage'>
-            <RecipieCard/>
-            <RecipieCard/>
-            <RecipieCard/>
-            <RecipieCard/>
-            <RecipieCard/>
-            <RecipieCard/>
-            <RecipieCard/>
             <RecipieCard/>
         </div>
     )
