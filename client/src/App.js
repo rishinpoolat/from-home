@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./components/Navbar/Navbar";
 import ShopRegister from "./pages/ShopRegister/ShopRegister";
 import HomePage from "./pages/HomePage/HomePage";
+import { getRecipes } from './actions/recipe';
 
 import SingleShop from "./pages/SingelShop/SingleShop";
 import UserProfile from "./pages/UserProfile/UserProfile";
