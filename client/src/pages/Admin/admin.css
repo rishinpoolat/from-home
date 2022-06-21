@@ -1,0 +1,40 @@
+.admin-container{
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.admin-products{
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid red;
+}
+
+.admin-orders{
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.admin-products h2{
+    margin-bottom: 1rem;
+}
+
+.admin-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    z-index: 100;
+}

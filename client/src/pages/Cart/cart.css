@@ -1,0 +1,16 @@
+.cart{
+   padding: 1rem 4rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(230, 224, 239);
+ 
+}
+
+.cart-bottom{
+    padding: 0.2rem;
+}
+
+.cart h1{
+    margin-bottom: 1rem;
+}

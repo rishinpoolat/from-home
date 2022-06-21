@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 import './navbar.css'
 
@@ -49,6 +50,8 @@ export default function Navbar() {
                 <Link className='nav-link link' to='/' onClick={logout}>Logout</Link>
                 </> : 
                 <Link className='nav-link link' to='/auth'>Sign In</Link>}
+                <Link className="cart-logo df" to='/cart'><AiOutlineShoppingCart/></Link>
+                
             </div>
                 
         </nav>

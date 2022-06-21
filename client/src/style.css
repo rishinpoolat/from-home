@@ -29,8 +29,16 @@ input:focus {
   flex-direction: column;
 }
 
+.bn {
+  border: none;
+}
+
 .jc-sb {
   justify-content: space-between;
+}
+
+.jcc {
+  justify-content: center;
 }
 
 .input {
@@ -54,12 +62,18 @@ input:focus {
   border-radius: 4px;
 }
 
+.cart-logo{
+  font-size: 2rem;
+  color: rgb(70, 155, 154);
+  margin-left: 1rem;
+}
+
 .app {
   position: relative;
   overflow: hidden;
 }
 
-.app::before {
+/* .app::before {
   content: "Hello";
   width: 100vw;
   font-size: 6rem;
@@ -79,6 +93,9 @@ input:focus {
 }
 
 @keyframes fade-out {
+  0% { right: 0 }
+  100% { right: -3000px }
+} 
   0% {
     right: 0;
   }
@@ -86,3 +103,4 @@ input:focus {
     right: -3000px;
   }
 }
+*/
