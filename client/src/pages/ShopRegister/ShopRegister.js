@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import FileBase from "react-file-base64";
 
 import { createNewShop } from "../../actions/shops";
 
 import "./shopRegister.css";
+import axios from "axios";
 
-const ShopRegister = () => {
+const ShopRegister = ({ user }) => {
+  const [file, setFile] = useState(null);
   const [shopData, setShopData] = useState({
+    userId: "",
     shopName: "",
     district: "",
     ownerName: "",
     email: "",
     shopPhone: "",
     address: "",
-    logo: "",
     banner: "",
     description: "",
   });
@@ -23,7 +24,24 @@ const ShopRegister = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createNewShop(shopData));
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "uploads");
+
+    try {
+      const uploadRes = await axios.post(
+        "https://api.cloudinary.com/v1_1/ziifoo/image/upload",
+        data
+      );
+
+      const { url } = uploadRes.data;
+      shopData.banner = url;
+      shopData.userId = user.result._id;
+
+      dispatch(createNewShop(shopData));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const clear = () => {};
@@ -91,13 +109,7 @@ const ShopRegister = () => {
         <div className="shopregister-img-icons fd-c df">
           <div className="shopregister-icon">
             <label>banner</label>
-            <FileBase
-              type="file"
-              multiple={false}
-              onDone={({ base64 }) =>
-                setShopData({ ...shopData, banner: base64 })
-              }
-            />
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
           </div>
         </div>
         <textarea

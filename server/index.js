@@ -36,5 +36,3 @@ mongoose
     )
   )
   .catch((error) => console.log(error.message));
-
-// MONGODB_URL = mongodb+srv://ziifoo:ziifoo0909@cluster0.7kib8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
