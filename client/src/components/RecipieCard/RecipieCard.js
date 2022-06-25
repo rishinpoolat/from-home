@@ -1,4 +1,5 @@
 import './recipieCard.css';
+
 const addLike = (e) => {
     if(e.target.className === "far fa-thumbs-up"){
       e.target.className = 'fas fa-thumbs-up';
@@ -6,33 +7,27 @@ const addLike = (e) => {
       e.target.className = 'far fa-thumbs-up';
     }
       }
-const RecipieCard = () => {
+
+const RecipieCard = ({recipe}) => {
     return (
-        <div className='recipiecard df fd-c'>
+        <div className='recipiecard br bs-0 df fd-c'>
             <header className="recipiecard-header df">
                 <div>
                     <img className='recipie-img' src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/12/unhealthiest-foods-planet.jpg?quality=82&strip=1&resize=640%2C360" alt=""/>
                 </div>
                 <div className='recipie-header-name'>
-                    <span className='recipie-user'>@rishin</span>
-                    <h3 className="recipiecard-name">Broast</h3>
+                    <span className='recipie-user'>@{recipe.userId}</span>
+                    <h2 className="recipiecard-name">{recipe.name}</h2>
                 </div>
             </header>
-            <div className="recipie-body df">
+            <div className="recipie-body df fd-c">
                 <div className='recipie-ingridients'> 
-                    <h4>Ingrideints</h4>
-                    <ul>
-                        <li>akkgjhggj</li>
-                        <li>gwhwu</li>
-                        <li>gwhwu</li>
-                        <li>gwhwu</li>
-                        <li>gwhwu</li>
-                        <li>gwhwu</li>
-                    </ul>
+                    <h3>Ingrideints</h3>
+                    <span>{recipe.ingredients}</span>
                 </div>
                 <div className='recipie-des'>
-                    <h4>Description</h4>
-                    <p>lorem5rtyuguygrtyugruygreyufreyrsyurutryrgryffgduhfgyrtyregyrtutrguyergrdugsdggdfyugfeuyg</p>
+                    <h3>Description</h3>
+                    <p>{recipe.description}</p>
                 </div>
             </div>
             <div className='recipie-bottom'>

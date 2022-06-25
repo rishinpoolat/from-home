@@ -14,8 +14,10 @@ const Cart = () => {
             <CartItem/>
             <CartItem/>
 
-        <div className='cart-bottom'><h3>sub total =${3+5} </h3>
-        <button className='active-button'>proceed to pay</button></div>
+        <div className='cart-bottom'>
+        <h2>sub total =${3+5} </h2>
+        <button className='active-button'>proceed to pay</button>
+        </div>
         
     </div>
   )

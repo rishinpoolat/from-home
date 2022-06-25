@@ -2,13 +2,13 @@
   justify-content: space-between;
   min-height: 90vh;
   padding: 2rem 4rem;
-
 }
 
 .userprofile-main {
-  background-color: #E3FDFD;
   padding: 2rem;
   width: 70%;
+  color: black ;
+  animation: pop 0.5s ease-in-out;
 }
 
 .userprofile-left {

@@ -1,5 +1,5 @@
 import ShopCard from "../../components/Shops/ShopCard/ShopCard";
-import SideBar from "../../components/SideBar/SideBar";
+import Loading from '../../components/Loading/Loading'
 import "./homepage.css";
 
 export default function HomePage({ shops }) {
@@ -16,15 +16,18 @@ export default function HomePage({ shops }) {
     "https://images.unsplash.com/photo-1506815181983-292770fc39f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGNha2UlMjBzaG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60";
 
   return (
-    <div className="df">
+    !shops.length ? (
+      <Loading/>
+    ) : (
+      <div className="df">
       <div className="home-main df fd-c">
         <header className="home-header ">
           <h1>Trending</h1>
           <div className="homepage-trending df">
-            <img src={headerImg1} alt="" className="home-header-img" />
-            <img src={headerImg2} alt="" className="home-header-img" />
-            <img src={headerImg3} alt="" className="home-header-img" />
-            <img src={headerImg4} alt="" className="home-header-img" />
+            <img src={headerImg1} alt="" className="home-header-img br" />
+            <img src={headerImg2} alt="" className="home-header-img br" />
+            <img src={headerImg3} alt="" className="home-header-img br" />
+            <img src={headerImg4} alt="" className="home-header-img br" />
           </div>
         </header>
         <h1>Cake Shops at Calicut</h1>
@@ -42,12 +45,10 @@ export default function HomePage({ shops }) {
           )}
         </div>
       </div>
-      <div className="home-sidebar ai-c fd-c df">
-        <SideBar />
-      </div>
       <button className="home-right-drag-button">
         <i className="fas fa-less-than"></i>
       </button>
     </div>
+    )
   );
 }

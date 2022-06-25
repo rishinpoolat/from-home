@@ -1,6 +1,7 @@
 .shopregister {
-    padding: 1rem 0;
-    background: #E3FDFD;
+    padding: 1rem 2rem;
+    margin: 2rem 0rem;
+    animation: pop 0.5s ease-in-out
 }
 
 .shopregister h3 {
@@ -13,7 +14,6 @@
 }
 
 .shopregister-img-icons {
-    margin-left: 1rem;
     justify-content: space-between;
 }
 
@@ -25,19 +25,11 @@
     outline: none;
 }
 
-.shopregister-form .shopregister-clear-btn  {
-    background-color: #CBF1F5;
+.shopregister-form .shopregister-clear-btn  { 
     margin-top: 1rem; 
-    color: #000;
 }
 
-.shopregister {
-    height: 90vh;
-}
 
-.shopregister-form {
-    padding-bottom: 0.5rem;
-}
 
 @media (max-width: 520px) {
     /* .shopregister h3 {

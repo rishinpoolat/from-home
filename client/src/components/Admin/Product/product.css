@@ -1,22 +1,21 @@
 .product{
     padding: 0.5rem 1rem;
-    border: 2px solid rgb(72, 179, 158);
+    border: 2px solid #EF9F9F;
     margin-bottom: 1rem;
-    border-radius: 5px;
+    width: 100%;
 }
 
 .product-icons{
     font-size: 1.2rem;
     cursor: pointer;
-    color: rgb(70, 155, 154);
+    color: #EF9F9F;
 }
 
 .product-icons:not(:last-child) {
     margin-right: 0.5rem;
 }
 
-.product-img{
+.product-img {
     height: 50px;
     width: 50px;
-    border-radius: 3px;
 }

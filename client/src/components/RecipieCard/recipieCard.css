@@ -1,21 +1,20 @@
 .recipiecard {
-    max-width: 300px;
-    border-radius: 5px;
-    background-color: aliceblue;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 250px;
+    background-color: white;
     margin-bottom: 2.5rem;
-    margin-right: 2rem;
-    overflow: hidden;
-    color: grey;
+    margin-right: 1rem;
+    overflow-y: scroll;
+    line-height: 1.3;
 }
 
 .recipiecard-header {
     padding: 1rem;
-    background-color: #CBF1F5;
+    background-color: #FAD4D4;
 }
 
-.recipiecard-header h3 {
-    color: rgb(70,155,154);
+.recipiecard-header h2 {
+    color: #F47C7C;
 }
 
 .recipie-header-name {
@@ -41,20 +40,21 @@
 .recipie-ingridients {
     font-size: 0.7rem;
     padding: 0.3rem;
-    width: 30%;
-    margin-bottom: 1rem;
+    
+    word-wrap: break-word;
+    margin-bottom: 0.4rem;
 }
 
 .recipie-ingridients ul {
     list-style: none;
 }
 
-.recipie-ingridients h4 {
+/* .recipie-ingridients h4 {
     color:#27496D ;
-}
+} */
 
 .recipie-des {
-    width: 70%;
+   
     padding: 0.3rem;
     font-size: 0.7rem;
     word-wrap: break-word;

@@ -11,6 +11,7 @@ const initialState = {
   email: "",
   password: "",
   confirmPassword: "",
+  hasShop: false,
 };
 
 export default function Auth() {
@@ -58,7 +59,7 @@ export default function Auth() {
 
   return (
     <div className="loginpage fd-c ai-c df">
-      <div>
+      <div className="df ai-c jcc fd-c loginpage-container br bs-1">
         <h2>Have food, Have fun</h2>
         <h4>{isSignup ? "Sign Up" : "Sign In"}</h4>
         <form className="login-form ai-c fd-c df" onSubmit={handleSubmit}>
@@ -123,15 +124,15 @@ export default function Auth() {
             cookiePolicy="single_host_origin"
           />
         </form>
-      </div>
       <footer className="footer">
-        <h3>Don't have an account ?</h3>
+        
         <button className="active-button" onClick={switchMode}>
           {isSignup
             ? "Already have an account? Sign In"
             : "Dont't have an account? Sign Up"}
         </button>
       </footer>
+      </div>
     </div>
   );
 }

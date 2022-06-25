@@ -19,7 +19,7 @@ const SingleShop = () => {
 
   return (
     <div className='singleshop df fd-c'>
-      <img src={shop.banner} alt="" className="singleshop-banner-img" />
+      <img src={shop.banner} alt="" className="singleshop-banner-img br" />
       <div className="singleshop-title df ai-c">
         <img src={shop.logo} alt="" className="singleshop-logo" />
         <div className="singleshop-title-text">

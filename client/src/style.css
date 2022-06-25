@@ -1,3 +1,10 @@
+/* 
+orange #F47C7C
+light orange #EF9F9F
+very light orange #FAD4D4
+off-white #FFF2F2
+*/
+
 * {
   padding: 0;
   margin: 0;
@@ -12,9 +19,21 @@ input:focus {
   outline: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .link {
   text-decoration: none;
   cursor: pointer;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 .df {
@@ -25,12 +44,24 @@ input:focus {
   align-items: center;
 }
 
+.mr-0 {
+  margin-right: 0.5rem;
+}
+
 .fd-c {
   flex-direction: column;
 }
 
 .bn {
   border: none;
+}
+
+.br {
+  border-radius: 5px;
+}
+
+.bd-0 {
+  border: 1.5px solid #F47C7C;
 }
 
 .jc-sb {
@@ -41,32 +72,35 @@ input:focus {
   justify-content: center;
 }
 
+.bs-0 {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.bs-1 {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .input {
   margin-bottom: 1rem;
-  width: 300px;
+  width: 100%;
   border: none;
   padding: 0.5rem;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  border-radius: 5px;
   font-family: "DM Sans", serif;
 }
 
 .active-button {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-  background-color: rgb(70, 155, 154);
+  background-color: #F47C7C;
   color: #fff;
-  width: 300px;
   cursor: pointer;
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
+  width: 100%;
 }
 
-.cart-logo{
-  font-size: 2rem;
-  color: rgb(70, 155, 154);
-  margin-left: 1rem;
-}
 
 .app {
   position: relative;

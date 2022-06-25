@@ -3,11 +3,20 @@
   justify-content: space-between;
   color: #111;
   background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: sticky;
   top: 0;
   width: 100vw;
   z-index: 999;
   height: 10vh;
+}
+
+.logo {
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.2);
 }
 
 .nav-links {
@@ -18,16 +27,11 @@
 .nav-link {
   transition: all 0.3s ease-in-out;
   color: #fff;
-  background-color: rgb(70, 155, 154);
+  background-color: #F47C7C;
   padding: 0.6rem;
-  border-radius: 5px;
   font-size: 0.9rem;
 }
 
-.nav-link-name {
-  margin-right: 1rem;
-  font-size: 18px;
-}
 
 .user-pic {
   width: 45px;
@@ -35,18 +39,26 @@
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.cart-logo{
+  font-size: 2rem;
+  color: #EF9F9F;
+  margin-left: 1rem;
 }
 
 .nav-link:hover {
-  background-color: rgb(18, 88, 87);
+  background-color: #EF9F9F;
 }
 
 .nav-link-logo {
   font-size: 2rem;
   font-weight: 300;
-  color: #111;
+  color: #F47C7C;
 }
+
+
 
 .home {
   font-family: "DM Sans", sans-serif;
