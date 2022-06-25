@@ -14,7 +14,7 @@ export default function ShopCard({ shop }) {
   };
 
   return (
-    <div className="card fd-c df">
+    <div className="card br fd-c df">
       <div className="card-hero">
         <img className="card-hero" src={shop.banner} alt="card-hero" />
       </div>

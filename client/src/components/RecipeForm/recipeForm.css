@@ -1,0 +1,36 @@
+.recipeForm {
+  padding: 1rem;
+  border: 1.5px solid #F47C7C;
+}
+
+.recipeForm h2,
+.recipeForm h4,
+.recipeForm h3 {
+  color:#F47C7C ;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.recipeForm-form {
+  margin-top: 1rem;
+}
+
+.recipeForm-form button {
+  width: 300px;
+}
+
+::placeholder { 
+  opacity: 0.7; 
+}
+
+.recipeForm-textarea:focus {
+  outline: none;
+}
+
+.recipeForm-form .recipeForm-button-clear {
+  background-color: #FFF;
+  color :#000;
+}
+
+.recipeForm-button-clear {
+  margin-top: 1rem;
+}

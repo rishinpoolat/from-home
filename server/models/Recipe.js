@@ -2,7 +2,10 @@ import mongoose from 'mongoose';
 
 const recipeSchema = mongoose.Schema(
   {
-    // userId: { type: String, required: true },
+    userId: { 
+      type: String,
+      required: true 
+    },
     name: {
         type: String,
         required: true
@@ -20,6 +23,6 @@ const recipeSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Recipe = mongoose.model('Recipe', recipeSchema);
+const Recipes = mongoose.model('Recipes', recipeSchema);
 
-export default Recipe;
+export default Recipes;

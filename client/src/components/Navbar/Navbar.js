@@ -35,12 +35,16 @@ export default function Navbar() {
       </div>
       <div className="nav-links ai-c df">
         <div>
-          <Link className="nav-link link recipielink" to="/recipie">
+          <Link className="nav-link br link recipielink" to="/recipie">
             Recipie
           </Link>
         </div>
+        
         {user ? (
           <>
+            <Link className="nav-link br link" to="/" onClick={logout}>
+              Logout
+            </Link>
             <Link to="/userprofile">
               <img
                 className="user-pic df"
@@ -51,18 +55,16 @@ export default function Navbar() {
                 alt={user?.result?.name}
               />
             </Link>
-            <Link className="nav-link link" to="/" onClick={logout}>
-              Logout
-            </Link>
+            <Link className="cart-logo df" to="/cart">
+          <AiOutlineShoppingCart />
+        </Link>
           </>
         ) : (
-          <Link className="nav-link link" to="/auth">
+          <Link className="nav-link br link" to="/auth">
             Sign In
           </Link>
         )}
-        <Link className="cart-logo df" to="/cart">
-          <AiOutlineShoppingCart />
-        </Link>
+        
       </div>
     </nav>
   );

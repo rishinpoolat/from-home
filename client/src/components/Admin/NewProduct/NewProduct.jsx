@@ -3,7 +3,7 @@ import './newProduct.css'
 const NewProduct = () => {
   return (
     <div className='newproduct df ai-c jcc'>
-      <div className='newproduct-container df ai-c fd-c'>
+      <div className='newproduct-container br df ai-c fd-c'>
         <h2>product details</h2>
         <form className='df ai-c fd-c'>
           <input className='input' type="text" placeholder='name of the product'/>

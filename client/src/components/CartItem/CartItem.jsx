@@ -9,15 +9,14 @@ const CartItem = () => {
     
     
   return (
-    <div className='cart-items' >
+    <div className='cart-items bs-0 bd-0' >
     <div className='df'>
       <img className="cart-img "src={headerImg1} alt="cart-img"/>
    
-        <div className="cart-right df fd-c">
+        <div className="cart-right df jc-sb">
           <div className="df fd-c">
             <span className="cart-item-name">Name : <span>Black Forest</span></span>
             <span className="cart-item-name">Price : <span>$43</span></span>
-            
             <span>Quantity</span>
             <div className="df ai-c">
               <button className="bn qty-btn" onClick={() => setQuantity((quantity && quantity - 1))}>-</button>
@@ -25,13 +24,14 @@ const CartItem = () => {
               <button className="bn qty-btn" onClick={() => setQuantity(quantity + 1)}>+</button>
             </div>
           </div>
-          <button className='cart-btn'>remove from cart</button>
+          <div>
+          <button className='cart-btn br'>remove from cart</button>
+          </div>
+          
         </div>
     </div>
     
     </div>
-          
-
   
        
   )

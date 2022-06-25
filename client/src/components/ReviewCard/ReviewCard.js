@@ -2,7 +2,7 @@ import './reviewCard.css';
 
 const ReviewCard = () => {
   return (
-    <div className='reviewcard df fd-c '> 
+    <div className='reviewcard br df fd-c '> 
       <header className="reviewcard-header df">
         <img src="https://randomuser.me/api/portraits/women/82.jpg" alt="" className="reviewcard-logo" />
         <h3 className="reviewcard-username">Joanne Mccoy</h3>

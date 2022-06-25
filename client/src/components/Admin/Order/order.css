@@ -1,7 +1,6 @@
 .admin-order{
     padding: 0.5rem 1rem;
-    border: 2px solid rgb(72, 179, 158);
+    border: 2px solid #EF9F9F;
     margin-top: 1rem;
-    border-radius: 5px;
     height: 70px;
 }

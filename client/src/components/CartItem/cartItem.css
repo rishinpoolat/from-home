@@ -1,9 +1,9 @@
 .cart-items{
-   padding: 0.5rem;
-   border: 1px solid gray;
+   padding: 2rem;
+   border-radius: 10px;
    margin-bottom: 1rem;
     position: relative;
-    width: 380px;
+    width: 100%;
 }
 
 .cart-img{
@@ -14,7 +14,7 @@
 
 .cart-right {
     text-align: left;
-    justify-content: flex-start;
+    width: 100%;
 }
 
 .cart-item-name {
@@ -40,13 +40,11 @@
 
 .cart-btn {
     border: none;
-    background-color: rgb(70, 155, 154);
+    background-color:#F47C7C ;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    border-radius: 3px;
     color: white;
-    position: absolute;
-    bottom: 1rem;
+    cursor: pointer;
 }
 
 
