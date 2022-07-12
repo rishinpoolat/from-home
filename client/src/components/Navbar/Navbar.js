@@ -11,6 +11,8 @@ export default function Navbar() {
   const history = useHistory();
   const location = useLocation();
 
+  const path = location.pathname.split("/")[1];
+
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");
@@ -18,12 +20,8 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    // const token = user?.token;
-
-    // jwt
-
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [location]);
+  }, []);
 
   return (
     <nav className="navbar ai-c df">
@@ -39,32 +37,39 @@ export default function Navbar() {
             Recipie
           </Link>
         </div>
-        
+
         {user ? (
           <>
-            <Link className="nav-link br link" to="/" onClick={logout}>
-              Logout
-            </Link>
-            <Link to="/userprofile">
-              <img
-                className="user-pic df"
-                src={
-                  user?.result?.imageUrl ||
-                  `https://avatars.dicebear.com/api/initials/${user.result.name}")}.svg`
-                }
-                alt={user?.result?.name}
-              />
-            </Link>
-            <Link className="cart-logo df" to="/cart">
-          <AiOutlineShoppingCart />
-        </Link>
+            {path === "user" ? (
+              <>
+                <Link className="nav-link br link" to="/" onClick={logout}>
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to={`/user/${user.result?._id}`}>
+                  <img
+                    className="user-pic df mr-0"
+                    src={
+                      user?.result?.imageUrl ||
+                      `https://avatars.dicebear.com/api/initials/${user.result?.name}")}.svg`
+                    }
+                    alt={user?.result?.name}
+                  />
+                </Link>
+              </>
+            )}
           </>
         ) : (
           <Link className="nav-link br link" to="/auth">
             Sign In
           </Link>
         )}
-        
+        <Link className="cart-logo df" to="/cart">
+          <span className="cart-qty df ai-c jcc">1</span>
+          <AiOutlineShoppingCart />
+        </Link>
       </div>
     </nav>
   );

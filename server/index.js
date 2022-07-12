@@ -7,6 +7,7 @@ import shopsRoute from "./routes/shops.js";
 import userRoute from "./routes/users.js";
 import cakeRoute from "./routes/cakes.js";
 import recipeRoute from "./routes/recipe.js";
+import cartRoute from "./routes/cart.js";
 
 const app = express();
 dotenv.config();
@@ -19,6 +20,7 @@ app.use("/shops", shopsRoute);
 app.use("/recipe", recipeRoute);
 app.use("/user", userRoute);
 app.use("/cakes", cakeRoute);
+app.use("/cart", cartRoute);
 
 app.get("/", (req, res) => {
   res.send("Helo to my cake shop");

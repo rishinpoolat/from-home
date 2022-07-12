@@ -1,78 +1,57 @@
 .recipiecard {
-    width: 300px;
-    height: 250px;
-    background-color: white;
-    margin-bottom: 2.5rem;
-    margin-right: 1rem;
-    overflow-y: scroll;
-    line-height: 1.3;
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  margin-bottom: 2.5rem;
+  margin-right: 2.5rem;
+  overflow-y: scroll;
+  line-height: 1.3;
+  animation: pop 0.5s ease-in-out;
 }
 
 .recipiecard-header {
-    padding: 1rem;
-    background-color: #FAD4D4;
+  padding: 1rem 1.5rem;
+  background-color: #fad4d4;
 }
 
 .recipiecard-header h2 {
-    color: #F47C7C;
-}
-
-.recipie-header-name {
-    margin-left: 1rem;
+  color: #f47c7c;
 }
 
 .recipie-user {
-    color: grey;
-    margin-bottom: 1rem;
-}
-
-.recipie-img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+  color: grey;
+  margin-bottom: 1rem;
 }
 
 .recipie-body {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .recipie-ingridients {
-    font-size: 0.7rem;
-    padding: 0.3rem;
-    
-    word-wrap: break-word;
-    margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  word-wrap: break-word;
+  margin-bottom: 0.4rem;
 }
 
 .recipie-ingridients ul {
-    list-style: none;
+  list-style: none;
 }
-
-/* .recipie-ingridients h4 {
-    color:#27496D ;
-} */
 
 .recipie-des {
-   
-    padding: 0.3rem;
-    font-size: 0.7rem;
-    word-wrap: break-word;
-}
-
-.recipie-des h4{
-    color:#27496D ;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  word-wrap: break-word;
 }
 
 .recipie-bottom {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .recipie-bottom span {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .fas.fa-thumbs-up {
-    color: navy;
+  color: navy;
 }
-

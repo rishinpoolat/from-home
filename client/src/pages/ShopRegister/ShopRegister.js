@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { createNewShop } from "../../actions/shops";
 
 import "./shopRegister.css";
 import axios from "axios";
+import { updateUser } from "../../actions/auth";
 
+const ShopRegister = () => {
+  const [user, setUser] = useState();
 
-const ShopRegister = ({ user }) => {
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, []);
+
   const [file, setFile] = useState(null);
+  // TODO data to be pass in formData eg: (name, email, password?, hasShop)
+  const [formData, setFormData] = useState({});
+  // console.log(formData.result.hasShop);
   const [shopData, setShopData] = useState({
     userId: "",
     shopName: "",
@@ -37,9 +46,10 @@ const ShopRegister = ({ user }) => {
 
       const { url } = uploadRes.data;
       shopData.banner = url;
-      shopData.userId = user.result._id;
-
+      shopData.userId = user?.result?._id;
       dispatch(createNewShop(shopData));
+      setFormData({ ...formData, hasShop: true });
+      dispatch(updateUser(formData, formData.result?._id));
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +61,10 @@ const ShopRegister = ({ user }) => {
     <div className="df jcc ai-c">
       <div className="shopregister bs-0 df ai-c jcc fd-c br bd-0">
         <h3>Tell Us about your shop</h3>
-        <form className="shopregister-form df fd-c ai-c" onSubmit={handleSubmit}>
+        <form
+          className="shopregister-form df fd-c ai-c"
+          onSubmit={handleSubmit}
+        >
           <input
             className="input"
             placeholder="Name of Shop"
@@ -86,7 +99,9 @@ const ShopRegister = ({ user }) => {
             placeholder="Email"
             type="email"
             value={shopData.email}
-            onChange={(e) => setShopData({ ...shopData, email: e.target.value })}
+            onChange={(e) =>
+              setShopData({ ...shopData, email: e.target.value })
+            }
             name="email"
           />
           <input
@@ -125,7 +140,11 @@ const ShopRegister = ({ user }) => {
               setShopData({ ...shopData, description: e.target.value })
             }
           ></textarea>
-          <button className="active-button" type="submit" onClick={handleSubmit}>
+          <button
+            className="active-button"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
           <button

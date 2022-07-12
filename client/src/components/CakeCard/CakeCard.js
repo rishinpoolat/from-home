@@ -1,23 +1,50 @@
-import './cakeCard.css'
+import { useDispatch } from "react-redux";
+import { BsStarHalf } from "react-icons/bs";
+import "./cakeCard.css";
+import { createCart } from "../../actions/cart";
+import { useState } from "react";
 
-export default function CakeCard() {
+export default function CakeCard({ cake }) {
+  const user = JSON.parse(localStorage.getItem("profile"));
+  console.log(user);
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+  const addToCart = () => {
+    dispatch(createCart(cake, quantity, user.result?._id));
+  };
 
-  const addToWishlist = (e) => {
-    if(e.target.className === "fas fa-heart"){
-      e.target.className = 'far fa-heart';
-    }else{
-      e.target.className = 'fas fa-heart';
-    }
-      }
-      
   return (
-    <div className='cakecard br'>
-      <img src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="" className="cakecard-img" />
-      <div className="cakecard-buttons  ai-c df">
-        <button className="active-button">Add to cart<i className="fas fa-cart-plus"></i></button>
-        <button className="active-button">Buy now<i className="fas fa-arrow-right"></i></button>
-        <i onClick={addToWishlist} className="far fa-heart"></i>
+    <div className="cakecard br df fd-c">
+      <div className="cakecard-hero">
+        <img src={cake.image} alt={cake.name} className="cakecard-img" />
+      </div>
+      {/* name, price, rating */}
+      <div className="cakecard-info df jc-sb">
+        {/* name, price */}
+        <div>
+          <p className="cake-name">{cake.name}</p>
+          <p className="df ai-c">
+            <b>Rs.</b>
+            <span>{cake.price}</span>
+          </p>
+        </div>
+        {/* rating */}
+        <div>
+          <span>
+            4.5
+            <BsStarHalf />
+          </span>
+        </div>
+      </div>
+      <div className="cakecard-action">
+        <button onClick={addToCart} className="active-button">
+          Add to cart
+        </button>
       </div>
     </div>
-  )
+  );
 }
+
+// TODO
+// add to cart function
+// like option

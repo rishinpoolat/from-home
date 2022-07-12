@@ -1,9 +1,8 @@
 .recipepage {
-    padding: 2rem 4rem;
+  padding: 2rem 6rem;
 }
 
 .recipepage-container {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  flex: 5;
+  flex-wrap: wrap;
 }

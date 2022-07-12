@@ -1,12 +1,7 @@
 .cakecard {
-  max-width: 300px;
-  background-color: aliceblue;
-  padding-bottom: 0.7rem;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  width: 300px;
   overflow: hidden;
   position: relative;
-  margin-bottom: 2.5rem;
-  margin-right: 2rem;
 }
 
 .cakecard-img {
@@ -15,17 +10,20 @@
   object-fit: cover;
 }
 
-.fas.fa-heart {
-  color: #E63E6D;
+.cakecard-action {
+  width: 100%;
 }
 
-.cakecard button {
-  width: 6rem;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  margin-top: 0.4rem;
+.cakecard-action .active-button {
+  border-radius: 0;
 }
 
-.cakecard-buttons {
-  justify-content: space-evenly;
+.cake-name {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.cakecard-info {
+  padding: 0.2rem 0.5rem;
 }

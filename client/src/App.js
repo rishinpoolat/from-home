@@ -13,27 +13,25 @@ import Cart from "./pages/Cart/Cart";
 import Auth from "./components/Auth/Auth";
 import "./style.css";
 import { getShops } from "./actions/shops";
-import { getRecipes } from "./actions/recipe";
 import AdminSidebar from "./components/AdminSidebar/AdminSidebar";
 import Products from "./pages/Admin/Products/Products";
 import Orders from "./pages/Admin/Orders/Orders";
+import Add from "./pages/Admin/Products/Add/Add";
+import Admin from "./pages/Admin/Admin";
+import { getCakes } from "./actions/cake";
 
 const App = () => {
-
   const dispatch = useDispatch();
   const shops = useSelector((state) => state.shops);
-  const recipes = useSelector((state) => state.recipe);
+  const cakes = useSelector((state) => state.cakes);
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
-  
   useEffect(() => {
     dispatch(getShops());
-    dispatch(getRecipes());
+    dispatch(getCakes());
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [dispatch]);
-
-  console.log(shops);
 
   return (
     <div className="app">
@@ -41,15 +39,15 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <HomePage shops={shops} />
+            <HomePage shops={shops} cakes={cakes} />
           </Route>
           <Route path="/auth">
             <Auth />
           </Route>
-          <Route path="/shops/shopregister">
+          <Route path="/shopregister">
             <ShopRegister user={user} />
           </Route>
-          <Route path="/userprofile">
+          <Route path="/user/:id">
             <UserProfile user={user} />
           </Route>
           <Route path="/shops/:shopId">
@@ -59,20 +57,31 @@ const App = () => {
             <ShopEdit />
           </Route>
           <Route path="/recipie">
-            <RecipiePage recipes={recipes} />
+            <RecipiePage user={user} />
           </Route>
           <Route path="/cart">
             <Cart />
           </Route>
+          <Route path="/admin/products/add">
+            <div className="df">
+              <AdminSidebar className="admin-sidebar" />
+              <Add />
+            </div>
+          </Route>
           <Route path="/admin/products">
             <div className="df">
-              <AdminSidebar className="admin-sidebar"/>
+              <AdminSidebar className="admin-sidebar" />
               <Products />
+            </div>
+          </Route>
+          <Route path="/admin">
+            <div className="df">
+              <Admin />
             </div>
           </Route>
           <Route path="/admin/orders">
             <div className="df">
-              <AdminSidebar/>
+              <AdminSidebar />
               <Orders />
             </div>
           </Route>

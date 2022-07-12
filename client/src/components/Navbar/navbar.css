@@ -27,11 +27,10 @@
 .nav-link {
   transition: all 0.3s ease-in-out;
   color: #fff;
-  background-color: #F47C7C;
+  background-color: #f47c7c;
   padding: 0.6rem;
   font-size: 0.9rem;
 }
-
 
 .user-pic {
   width: 45px;
@@ -39,26 +38,35 @@
   object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
-  margin-left: 1rem;
 }
 
-.cart-logo{
-  font-size: 2rem;
-  color: #EF9F9F;
-  margin-left: 1rem;
+.cart-logo {
+  font-size: 2.5rem;
+  color: #ef9f9f;
+  position: relative;
+}
+
+.cart-qty {
+  position: absolute;
+  font-size: 0.8rem;
+  background-color: #f47c7c;
+  color: #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  top: -5px;
+  right: -5px;
 }
 
 .nav-link:hover {
-  background-color: #EF9F9F;
+  background-color: #ef9f9f;
 }
 
 .nav-link-logo {
   font-size: 2rem;
   font-weight: 300;
-  color: #F47C7C;
+  color: #f47c7c;
 }
-
-
 
 .home {
   font-family: "DM Sans", sans-serif;

@@ -1,13 +1,14 @@
 .recipeForm {
   padding: 1rem;
-  border: 1.5px solid #F47C7C;
+  border: 1.5px solid #f47c7c;
+  animation: slide-left 0.5s linear;
 }
 
 .recipeForm h2,
 .recipeForm h4,
 .recipeForm h3 {
-  color:#F47C7C ;
-  font-family: 'DM Sans', sans-serif;
+  color: #f47c7c;
+  font-family: "DM Sans", sans-serif;
 }
 
 .recipeForm-form {
@@ -18,8 +19,8 @@
   width: 300px;
 }
 
-::placeholder { 
-  opacity: 0.7; 
+::placeholder {
+  opacity: 0.7;
 }
 
 .recipeForm-textarea:focus {
@@ -27,8 +28,8 @@
 }
 
 .recipeForm-form .recipeForm-button-clear {
-  background-color: #FFF;
-  color :#000;
+  background-color: #fff;
+  color: #000;
 }
 
 .recipeForm-button-clear {

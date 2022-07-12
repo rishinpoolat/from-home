@@ -1,26 +1,10 @@
-import express from 'express';
-
-import Cakes from '../models/Cakes.js';
+import express from "express";
+import { createCake, getCake, getCakes } from "../controllers/cakes.js";
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-  const newCake = new Cakes(req.body);
-  try {
-    const savedCakes = await newCake.save();
-    res.status(200).json(savedCakes);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
-
-router.get('/', async (req, res) => {
-  try {
-    const cakes = await Cakes.find();
-    res.status(200).json(cakes);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
+router.post("/", createCake);
+router.get("/:id", getCake);
+router.get("/", getCakes);
 
 export default router;

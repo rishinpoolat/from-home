@@ -1,24 +1,23 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const cakesSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     price: {
       type: Number,
       required: true,
     },
-    img: {
+    image: {
       type: String,
       required: true,
     },
-
   },
   { timestamps: true }
 );
 
-const Cakes = mongoose.model('cakes', cakesSchema);
+const Cakes = mongoose.model("Cakes", cakesSchema);
 
 export default Cakes;
