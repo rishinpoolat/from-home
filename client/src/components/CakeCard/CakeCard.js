@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function CakeCard({ cake }) {
   const user = JSON.parse(localStorage.getItem("profile"));
-  console.log(user);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const addToCart = () => {
