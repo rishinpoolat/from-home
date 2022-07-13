@@ -1,15 +1,15 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GrLocation } from "react-icons/gr";
 import { BsStarHalf } from "react-icons/bs";
 
 import "./shopCard.css";
 
 export default function ShopCard({ shop }) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    history.push(`/shops/${shop._id}`);
+    navigate(`/shops/${shop._id}`);
     console.log(shop);
   };
 

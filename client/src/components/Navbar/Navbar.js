@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import "./navbar.css";
@@ -8,14 +8,16 @@ import "./navbar.css";
 export default function Navbar() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const quantity = useSelector((state) => state.cart.quantity);
 
   const path = location.pathname.split("/")[1];
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
-    history.push("/");
+    navigate("/");
     setUser(null);
   };
 
@@ -67,7 +69,7 @@ export default function Navbar() {
           </Link>
         )}
         <Link className="cart-logo df" to="/cart">
-          <span className="cart-qty df ai-c jcc">1</span>
+          <span className="cart-qty df ai-c jcc">{quantity}</span>
           <AiOutlineShoppingCart />
         </Link>
       </div>

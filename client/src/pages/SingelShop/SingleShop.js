@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { GrLocation } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { getShop } from "../../actions/shops";
 // import CakeCard from "../../components/CakeCard/CakeCard";
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
+import { getShop } from "../../redux/features/shopSlice";
 import "./singleShop.css";
 
 const SingleShop = () => {

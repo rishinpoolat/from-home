@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createNewCake } from "../../../../actions/cake";
+import { createCake } from "../../../../redux/features/cakeSlice";
 import "./add.css";
 
 const Add = () => {
@@ -32,7 +32,7 @@ const Add = () => {
       // TODO set shopID
       // cakeData.shopId =
 
-      dispatch(createNewCake(cakeData));
+      dispatch(createCake(cakeData));
     } catch (error) {
       console.log(error);
     }

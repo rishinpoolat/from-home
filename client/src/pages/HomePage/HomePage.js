@@ -1,10 +1,10 @@
 import ShopCard from "../../components/Shops/ShopCard/ShopCard";
 import Loading from "../../components/Loading/Loading";
-import "./homepage.css";
 import CakeCard from "../../components/CakeCard/CakeCard";
+import "./homepage.css";
 
 export default function HomePage({ shops, cakes }) {
-  return !shops.length ? (
+  return !shops.shops.length ? (
     <Loading />
   ) : (
     <div className="df">
@@ -12,7 +12,7 @@ export default function HomePage({ shops, cakes }) {
         <header className="home-header">
           <h1>Top Trending Cakes</h1>
           <div className="homepage-trending df">
-            {cakes.map((cake) => (
+            {cakes?.cakes?.map((cake) => (
               <div className="home-header-card bs-0" key={cake._id}>
                 <CakeCard cake={cake} />
               </div>
@@ -21,7 +21,7 @@ export default function HomePage({ shops, cakes }) {
         </header>
         <h1>Cake Shops at Calicut</h1>
         <div className="home-shops df">
-          {shops.map((shop) => (
+          {shops.shops.map((shop) => (
             <div key={shop._id}>
               <ShopCard shop={shop} />
             </div>

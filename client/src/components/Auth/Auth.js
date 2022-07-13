@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { signup, signin } from "../../actions/auth";
+import { useNavigate } from "react-router-dom";
+
+import { login, register } from "../../redux/features/authSlice";
 import "./auth.css";
 
 const initialState = {
@@ -18,7 +19,7 @@ export default function Auth() {
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // custome userpic
   // https://avatars.dicebear.com/api/initials/happy.svg
@@ -26,9 +27,9 @@ export default function Auth() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignup) {
-      dispatch(signup(formData, history));
+      dispatch(register(formData, navigate));
     } else {
-      dispatch(signin(formData, history));
+      dispatch(login(formData, navigate));
     }
   };
 
@@ -46,7 +47,7 @@ export default function Auth() {
 
     try {
       dispatch({ type: "AUTH", data: { result, token } });
-      history.push("/");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -124,14 +125,13 @@ export default function Auth() {
             cookiePolicy="single_host_origin"
           />
         </form>
-      <footer className="footer">
-        
-        <button className="active-button" onClick={switchMode}>
-          {isSignup
-            ? "Already have an account? Sign In"
-            : "Dont't have an account? Sign Up"}
-        </button>
-      </footer>
+        <footer className="footer">
+          <button className="active-button" onClick={switchMode}>
+            {isSignup
+              ? "Already have an account? Sign In"
+              : "Dont't have an account? Sign Up"}
+          </button>
+        </footer>
       </div>
     </div>
   );

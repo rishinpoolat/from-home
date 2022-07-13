@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-
-import { createNewShop } from "../../actions/shops";
-
-import "./shopRegister.css";
 import axios from "axios";
-import { updateUser } from "../../actions/auth";
+
+import { createShop } from "../../redux/features/shopSlice";
+import { updateUser } from "../../redux/features/authSlice";
+import "./shopRegister.css";
 
 const ShopRegister = () => {
   const [user, setUser] = useState();
@@ -16,7 +15,11 @@ const ShopRegister = () => {
 
   const [file, setFile] = useState(null);
   // TODO data to be pass in formData eg: (name, email, password?, hasShop)
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    name: user?.result?.name,
+    email: user?.result?.email,
+    hasShop: user?.result?.hasShop,
+  });
   // console.log(formData.result.hasShop);
   const [shopData, setShopData] = useState({
     userId: "",
@@ -47,9 +50,9 @@ const ShopRegister = () => {
       const { url } = uploadRes.data;
       shopData.banner = url;
       shopData.userId = user?.result?._id;
-      dispatch(createNewShop(shopData));
+      dispatch(createShop(shopData));
       setFormData({ ...formData, hasShop: true });
-      dispatch(updateUser(formData, formData.result?._id));
+      dispatch(updateUser(formData, user.result?._id));
     } catch (error) {
       console.log(error);
     }

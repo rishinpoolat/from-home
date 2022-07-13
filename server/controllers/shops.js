@@ -13,30 +13,7 @@ export const getShops = async (req, res) => {
 };
 
 export const createShop = async (req, res) => {
-  const {
-    userId,
-    shopName,
-    district,
-    ownerName,
-    email,
-    shopPhone,
-    address,
-    banner,
-    description,
-    cakes,
-  } = req.body;
-  const newShop = new Shops({
-    userId,
-    shopName,
-    district,
-    ownerName,
-    email,
-    shopPhone,
-    address,
-    banner,
-    description,
-    cakes,
-  });
+  const newShop = new Shops(req.body);
   try {
     await newShop.save();
     res.status(200).json(newShop);

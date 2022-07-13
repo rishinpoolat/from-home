@@ -1,15 +1,15 @@
 import { useDispatch } from "react-redux";
 import { BsStarHalf } from "react-icons/bs";
 import "./cakeCard.css";
-import { createCart } from "../../actions/cart";
+import { addProduct } from "../../redux/features/cartSlice";
 import { useState } from "react";
 
 export default function CakeCard({ cake }) {
-  const user = JSON.parse(localStorage.getItem("profile"));
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
-  const addToCart = () => {
-    dispatch(createCart(cake, quantity, user.result?._id));
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...cake, quantity }));
   };
 
   return (
@@ -36,7 +36,7 @@ export default function CakeCard({ cake }) {
         </div>
       </div>
       <div className="cakecard-action">
-        <button onClick={addToCart} className="active-button">
+        <button onClick={handleClick} className="active-button">
           Add to cart
         </button>
       </div>

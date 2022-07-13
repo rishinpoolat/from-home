@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { createRecipe } from "../../actions/recipe";
+import { useNavigate } from "react-router-dom";
+import { createRecipe } from "../../redux/features/recipeSlice";
 import "./recipeForm.css";
 
 const RecipeForm = () => {
@@ -14,7 +14,7 @@ const RecipeForm = () => {
   });
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("profile"));
 
@@ -22,12 +22,12 @@ const RecipeForm = () => {
     e.preventDefault();
     try {
       if (!user) {
-        history.push("/auth");
+        navigate("/auth");
       } else {
         // TODO set username
         recipe.userName = user.result.name;
         recipe.userId = user.result._id;
-        dispatch(createRecipe(recipe));
+        dispatch(createRecipe(recipe, navigate));
       }
     } catch (error) {
       console.log(error);

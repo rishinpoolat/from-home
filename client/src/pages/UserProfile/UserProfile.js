@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./userProfile.css";
 
 export default function UserProfile() {
@@ -9,8 +9,9 @@ export default function UserProfile() {
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, []);
 
-  const data = user?.result;
-  console.log(data);
+  const { id } = useParams();
+  console.log(id);
+
   return (
     <div className="userprofile df fd-c ai-c">
       <div className="userprofile-main df bs-0 bd-0 br">
