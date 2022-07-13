@@ -39,31 +39,25 @@ export default function Navbar() {
             Recipie
           </Link>
         </div>
+        {user && path === "user" && (
+          <Link className="nav-link br link mr-1" to="/" onClick={logout}>
+            Logout
+          </Link>
+        )}
 
-        {user ? (
-          <>
-            {path === "user" ? (
-              <>
-                <Link className="nav-link br link" to="/" onClick={logout}>
-                  Logout
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link to={`/user/${user.result?._id}`}>
-                  <img
-                    className="user-pic df mr-0"
-                    src={
-                      user?.result?.imageUrl ||
-                      `https://avatars.dicebear.com/api/initials/${user.result?.name}")}.svg`
-                    }
-                    alt={user?.result?.name}
-                  />
-                </Link>
-              </>
-            )}
-          </>
-        ) : (
+        {user && path !== "user" && (
+          <Link to={`/user/${user.result?._id}`}>
+            <img
+              className="user-pic df mr-0"
+              src={
+                user?.result?.imageUrl ||
+                `https://avatars.dicebear.com/api/initials/${user.result?.name}")}.svg`
+              }
+              alt={user?.result?.name}
+            />
+          </Link>
+        )}
+        {!user && (
           <Link className="nav-link br link" to="/auth">
             Sign In
           </Link>

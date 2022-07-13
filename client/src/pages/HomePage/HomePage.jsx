@@ -2,12 +2,14 @@ import ShopCard from "../../components/Shops/ShopCard/ShopCard";
 import Loading from "../../components/Loading/Loading";
 import CakeCard from "../../components/CakeCard/CakeCard";
 import "./homepage.css";
+import Slider from "../../components/Slider/Slider";
 
 export default function HomePage({ shops, cakes }) {
   return !shops.shops.length ? (
     <Loading />
   ) : (
-    <div className="df">
+    <div className="df fd-c">
+      <Slider />
       <div className="home-main df fd-c">
         <header className="home-header">
           <h1>Top Trending Cakes</h1>

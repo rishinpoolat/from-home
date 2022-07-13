@@ -7,7 +7,7 @@
 .userprofile-main {
   padding: 2rem;
   width: 70%;
-  color: black ;
+  color: black;
   animation: pop 0.5s ease-in-out;
 }
 
@@ -31,7 +31,6 @@
 .userprofile-right {
   padding: 1rem 3rem;
   display: flex;
-  justify-content: space-between;
 }
 
 .footer {

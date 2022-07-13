@@ -27,3 +27,11 @@
 .cakecard-info {
   padding: 0.2rem 0.5rem;
 }
+
+.cakecard-rating span {
+  margin-right: 0.3rem;
+}
+
+.star-icon {
+  color: #f47c7c;
+}

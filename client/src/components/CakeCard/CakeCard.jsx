@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { BsStarHalf } from "react-icons/bs";
-import "./cakeCard.css";
 import { addProduct } from "../../redux/features/cartSlice";
 import { useState } from "react";
+import "./cakeCard.css";
 
 export default function CakeCard({ cake }) {
   const dispatch = useDispatch();
@@ -11,6 +11,8 @@ export default function CakeCard({ cake }) {
   const handleClick = () => {
     dispatch(addProduct({ ...cake, quantity }));
   };
+
+  const rating = (3.0 + Math.random() * 5.0 - 3.0).toFixed(1);
 
   return (
     <div className="cakecard br df fd-c">
@@ -28,11 +30,9 @@ export default function CakeCard({ cake }) {
           </p>
         </div>
         {/* rating */}
-        <div>
-          <span>
-            4.5
-            <BsStarHalf />
-          </span>
+        <div className="df cakecard-rating">
+          <span>{rating}</span>
+          <BsStarHalf className="star-icon" />
         </div>
       </div>
       <div className="cakecard-action">

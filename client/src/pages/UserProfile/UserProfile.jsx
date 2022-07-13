@@ -26,14 +26,13 @@ export default function UserProfile() {
           />
           <button className="active-button">Edit Profile</button>
         </div>
-        <div className="userprofile-right  fd-c">
-          <h3>Name : {user?.result?.name}</h3>
+        <div className="userprofile-right fd-c">
+          <h3 className="mb-1">Name : {user?.result?.name}</h3>
           <span>email: {user?.result?.email}</span>
-          <span>locaiton</span>
         </div>
       </div>
       <footer className="footer">
-        <h3>Want to Start a Shop or Alread have Shops</h3>
+        <h3>Want to Start a Shop or Already have Shops</h3>
         <Link
           className="shop-btn link"
           to={user?.result?.hasShop ? `/admin/products` : `/shopregister`}
