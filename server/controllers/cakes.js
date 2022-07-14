@@ -1,17 +1,17 @@
 import Cakes from "../models/Cakes.js";
 
-// create
+// create new cake object on db
 export const createCake = async (req, res) => {
   const newCake = new Cakes(req.body);
   try {
     await newCake.save();
     res.status(200).json(newCake);
   } catch (error) {
-    res.status(409).json(error);
+    res.status(409).json({ message: error.message });
   }
 };
 
-// read
+// get all cakes from db
 export const getCakes = async (req, res) => {
   try {
     const cakes = await Cakes.find();
@@ -21,7 +21,7 @@ export const getCakes = async (req, res) => {
   }
 };
 
-// get single cake
+// get single cake from db
 export const getCake = async (req, res) => {
   try {
     const cake = await Cakes.findById(req.params.id);
@@ -30,3 +30,9 @@ export const getCake = async (req, res) => {
     console.log(error);
   }
 };
+
+// TODO
+// update a cake object
+// delete cake object
+// get all cakes from a shop
+// get top rated/liked cakes

@@ -12,7 +12,7 @@ export default function CakeCard({ cake }) {
     dispatch(addProduct({ ...cake, quantity }));
   };
 
-  const rating = (3.0 + Math.random() * 5.0 - 3.0).toFixed(1);
+  const rating = (3.0 + Math.random() * 2.0).toFixed(1);
 
   return (
     <div className="cakecard br df fd-c">

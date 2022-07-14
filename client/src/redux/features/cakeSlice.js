@@ -3,9 +3,9 @@ import * as api from "../api";
 
 export const createCake = createAsyncThunk(
   "cake/createCake",
-  async ({ cake, navigate }, { rejectWithValue }) => {
+  async ({ cakeData, navigate }, { rejectWithValue }) => {
     try {
-      const response = await api.createCake(cake);
+      const response = await api.createCake(cakeData);
       navigate("/");
       return response.data;
     } catch (err) {
@@ -38,44 +38,10 @@ export const getCake = createAsyncThunk(
   }
 );
 
-// export const getToursByUser = createAsyncThunk(
-//   "tour/getToursByUser",
-//   async (userId, { rejectWithValue }) => {
-//     try {
-//       const response = await api.getToursByUser(userId);
-//       return response.data;
-//     } catch (err) {
-//       return rejectWithValue(err.response.data);
-//     }
-//   }
-// );
-
-// export const deleteTour = createAsyncThunk(
-//   "tour/deleteTour",
-//   async ({ id, toast }, { rejectWithValue }) => {
-//     try {
-//       const response = await api.deleteTour(id);
-//       toast.success("Tour Deleted Successfully");
-//       return response.data;
-//     } catch (err) {
-//       return rejectWithValue(err.response.data);
-//     }
-//   }
-// );
-
-// export const updateTour = createAsyncThunk(
-//   "tour/updateTour",
-//   async ({ id, updatedTourData, toast, navigate }, { rejectWithValue }) => {
-//     try {
-//       const response = await api.updateTour(updatedTourData, id);
-//       toast.success("Tour Updated Successfully");
-//       navigate("/");
-//       return response.data;
-//     } catch (err) {
-//       return rejectWithValue(err.response.data);
-//     }
-//   }
-// );
+// TODO
+// get all cakes of a shop
+// update cake
+// delete cake
 
 const cakeSlice = createSlice({
   name: "cake",

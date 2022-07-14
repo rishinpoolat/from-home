@@ -6,17 +6,27 @@ import "./slider.css";
 
 const Slider = () => {
   const [sliderImg, setSliderImg] = useState(img1);
+  const [text, setText] = useState("");
 
   setTimeout(() => {
-    sliderImg === img1 && setSliderImg(img2);
-    sliderImg === img2 && setSliderImg(img3);
-    sliderImg === img3 && setSliderImg(img1);
+    if (sliderImg === img1) {
+      setSliderImg(img2);
+      setText("Bake it");
+    }
+    if (sliderImg === img2) {
+      setSliderImg(img3);
+      setText("Buy it");
+    }
+    if (sliderImg === img3) {
+      setSliderImg(img1);
+      setText("Sell it");
+    }
   }, 3000);
 
   return (
     <div className="df slider">
       <div className="slider-hover df ai-c jcc">
-        <h1>Bake it, Buy it</h1>
+        <h1>{text}</h1>
       </div>
       <img className="slider-img" src={sliderImg} alt="slider" />
     </div>

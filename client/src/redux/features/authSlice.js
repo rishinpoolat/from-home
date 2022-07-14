@@ -3,9 +3,9 @@ import * as api from "../api";
 
 export const login = createAsyncThunk(
   "auth/login",
-  async ({ formValue, navigate }, { rejectWithValue }) => {
+  async ({ userData, navigate }, { rejectWithValue }) => {
     try {
-      const response = await api.signIn(formValue);
+      const response = await api.signIn(userData);
       navigate("/");
       return response.data;
     } catch (err) {
@@ -16,9 +16,9 @@ export const login = createAsyncThunk(
 
 export const register = createAsyncThunk(
   "auth/register",
-  async ({ formValue, navigate }, { rejectWithValue }) => {
+  async ({ userData, navigate }, { rejectWithValue }) => {
     try {
-      const response = await api.signUp(formValue);
+      const response = await api.signUp(userData);
       navigate("/");
       return response.data;
     } catch (err) {
@@ -39,6 +39,8 @@ export const updateUser = createAsyncThunk(
     }
   }
 );
+
+// delete user
 
 const authSlice = createSlice({
   name: "auth",

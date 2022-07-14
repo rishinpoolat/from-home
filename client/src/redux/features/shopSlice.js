@@ -3,9 +3,9 @@ import * as api from "../api";
 
 export const createShop = createAsyncThunk(
   "shops/createShop",
-  async ({ shop, navigate }, { rejectWithValue }) => {
+  async ({ shopData, navigate }, { rejectWithValue }) => {
     try {
-      const response = await api.createShop(shop);
+      const response = await api.createShop(shopData);
       navigate("/");
       return response.data;
     } catch (err) {

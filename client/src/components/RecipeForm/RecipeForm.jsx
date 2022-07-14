@@ -27,7 +27,7 @@ const RecipeForm = () => {
         // TODO set username
         recipe.userName = user.result.name;
         recipe.userId = user.result._id;
-        dispatch(createRecipe(recipe, navigate));
+        dispatch(createRecipe({ recipe }));
       }
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ const RecipeForm = () => {
 
   return (
     <div className="recipeForm fd-c ai-c df bd-0 br">
-      <h2>Have a Recipie ? </h2>
+      <h2>What's your secret Recipe ? </h2>
       <h4>Share with us</h4>
       <form className="recipeForm-form df fd-c" onSubmit={handleSubmit}>
         <input

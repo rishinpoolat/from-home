@@ -53,8 +53,9 @@ const App = () => {
           <Route path="/user/:id" element={<UserProfile user={user} />}></Route>
           <Route path="/shops/:shopId" element={<SingleShop />}></Route>
           <Route path="/shopedit" element={<ShopEdit />}></Route>
-          <Route path="/recipie" element={<RecipiePage user={user} />}></Route>
+          <Route path="/recipe" element={<RecipiePage user={user} />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          {/* admin dashboard */}
           <Route
             path="/admin/products/add"
             element={

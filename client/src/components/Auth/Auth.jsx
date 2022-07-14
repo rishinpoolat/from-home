@@ -2,34 +2,45 @@ import { useState } from "react";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 import { login, register } from "../../redux/features/authSlice";
 import "./auth.css";
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  hasShop: false,
-};
-
 export default function Auth() {
   const [isSignup, setIsSignup] = useState(false);
-  const [formData, setFormData] = useState(initialState);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    hasShop: false,
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   // custome userpic
   // https://avatars.dicebear.com/api/initials/happy.svg
 
+  const { firstName, lastName, email, password, confirmPassword, hasShop } =
+    formData;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignup) {
-      dispatch(register(formData, navigate));
+      const userData = {
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+        hasShop,
+      };
+      console.log(userData);
+      dispatch(register({ userData, navigate }));
     } else {
-      dispatch(login(formData, navigate));
+      const userData = { email, password };
+      console.log(userData);
+      dispatch(login({ userData, navigate }));
     }
   };
 

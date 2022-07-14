@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import { setLogout } from "../../redux/features/authSlice";
 import "./navbar.css";
 
 export default function Navbar() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const location = useLocation();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   const quantity = useSelector((state) => state.cart.quantity);
 
   const path = location.pathname.split("/")[1];
 
   const logout = () => {
-    dispatch({ type: "LOGOUT" });
+    dispatch(setLogout()); //clear localStorage
     navigate("/");
     setUser(null);
   };
@@ -33,10 +33,11 @@ export default function Navbar() {
           <span className="home">Home</span>
         </Link>
       </div>
+      {/* navlinks */}
       <div className="nav-links ai-c df">
         <div>
-          <Link className="nav-link br link recipielink" to="/recipie">
-            Recipie
+          <Link className="nav-link br link recipielink" to="/recipe">
+            Recipe
           </Link>
         </div>
         {user && path === "user" && (
@@ -57,8 +58,8 @@ export default function Navbar() {
             />
           </Link>
         )}
-        {!user && (
-          <Link className="nav-link br link" to="/auth">
+        {!user && path !== "/auth" && (
+          <Link className="nav-link br link mr-1" to="/auth">
             Sign In
           </Link>
         )}

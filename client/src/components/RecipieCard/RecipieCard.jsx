@@ -1,14 +1,10 @@
+import { useState } from "react";
+import { RiHeartFill, RiHeartLine } from "react-icons/ri";
 import "./recipieCard.css";
 
-const addLike = (e) => {
-  if (e.target.className === "far fa-thumbs-up") {
-    e.target.className = "fas fa-thumbs-up";
-  } else {
-    e.target.className = "far fa-thumbs-up";
-  }
-};
-
 const RecipieCard = ({ recipe }) => {
+  const [like, setLike] = useState(false);
+
   return (
     <div className="recipiecard br bs-0 df fd-c">
       <header className="recipiecard-header df">
@@ -27,9 +23,12 @@ const RecipieCard = ({ recipe }) => {
           <p>{recipe.description}</p>
         </div>
       </div>
-      <div className="recipie-bottom">
-        <i onClick={addLike} className="far fa-thumbs-up"></i>
-        <span>122 likes</span>
+      <div onClick={() => setLike((prev) => !prev)} className="recipie-bottom">
+        {like ? (
+          <RiHeartFill className="like-icon" />
+        ) : (
+          <RiHeartLine className="like-icon" />
+        )}
       </div>
     </div>
   );

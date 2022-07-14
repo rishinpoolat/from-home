@@ -1,17 +1,16 @@
-import express from "express";
 import Shops from "../models/Shops.js";
 
-const router = express.Router();
-
+// get all shops
 export const getShops = async (req, res) => {
   try {
     const shops = await Shops.find();
     res.status(200).json(shops);
   } catch (error) {
-    res.status(404).json(error);
+    res.status(404).json({ message: error.message });
   }
 };
 
+// create a new shop
 export const createShop = async (req, res) => {
   const newShop = new Shops(req.body);
   try {
@@ -22,6 +21,7 @@ export const createShop = async (req, res) => {
   }
 };
 
+// get a single shop
 export const getShop = async (req, res) => {
   try {
     const shop = await Shops.findById(req.params.id);
@@ -31,4 +31,7 @@ export const getShop = async (req, res) => {
   }
 };
 
-export default router;
+// TODO
+// update shop
+// delete shop
+// shop review option

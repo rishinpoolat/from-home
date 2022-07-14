@@ -82,3 +82,6 @@ export const updateUser = async (req, res) => {
 
   res.json(updatedUser);
 };
+
+// TODO
+// delete user

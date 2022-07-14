@@ -3,10 +3,13 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 
 import { createShop } from "../../redux/features/shopSlice";
-import { updateUser } from "../../redux/features/authSlice";
+// import { updateUser } from "../../redux/features/authSlice";
 import "./shopRegister.css";
+import { useNavigate } from "react-router-dom";
 
 const ShopRegister = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -33,8 +36,6 @@ const ShopRegister = () => {
     description: "",
   });
 
-  const dispatch = useDispatch();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
@@ -50,9 +51,9 @@ const ShopRegister = () => {
       const { url } = uploadRes.data;
       shopData.banner = url;
       shopData.userId = user?.result?._id;
-      dispatch(createShop(shopData));
-      setFormData({ ...formData, hasShop: true });
-      dispatch(updateUser(formData, user.result?._id));
+      dispatch(createShop({ shopData, navigate }));
+      // setFormData({ ...formData, hasShop: true });
+      // dispatch(updateUser({formData, user.result?._id}));
     } catch (error) {
       console.log(error);
     }

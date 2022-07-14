@@ -1,11 +1,13 @@
-import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useDispatch } from "react-redux";
 import { createCake } from "../../../../redux/features/cakeSlice";
 import "./add.css";
 
 const Add = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [file, setFile] = useState(null);
   const [cakeData, setCakeData] = useState({
@@ -32,7 +34,7 @@ const Add = () => {
       // TODO set shopID
       // cakeData.shopId =
 
-      dispatch(createCake(cakeData));
+      dispatch(createCake({ cakeData, navigate }));
     } catch (error) {
       console.log(error);
     }
