@@ -16,11 +16,11 @@ const Cart = () => {
     <div className="cart df fd-c ai-c">
       <h1 className="cart-heading">my cart</h1>
       {cart.products.map((item) => (
-        <CartItem key={item.id} product={item} />
+        <CartItem key={item._id} product={item} />
       ))}
 
       <div className="cart-bottom">
-        <h2>sub total =${cart.total} </h2>
+        <h2>sub total = Rs. {cart.total} </h2>
         <button className="active-button">proceed to pay</button>
       </div>
     </div>

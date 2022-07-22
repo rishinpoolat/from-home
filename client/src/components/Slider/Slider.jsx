@@ -21,7 +21,7 @@ const Slider = () => {
       setSliderImg(img1);
       setText("Sell it");
     }
-  }, 3000);
+  }, 2000);
 
   return (
     <div className="df slider">

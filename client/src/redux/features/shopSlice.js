@@ -107,7 +107,7 @@ const shopSlice = createSlice({
     },
     [getShops.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = "action.payload.message";
     },
     [getShop.pending]: (state, action) => {
       state.loading = true;

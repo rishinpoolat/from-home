@@ -73,7 +73,7 @@ const cakeSlice = createSlice({
     },
     [getCakes.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = "action.payload.message";
     },
     [getCake.pending]: (state, action) => {
       state.loading = true;

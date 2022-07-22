@@ -4,6 +4,8 @@ import "./cartItem.css";
 const CartItem = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const handleClick = () => {};
+
   return (
     <div className="cart-items bs-0 bd-0">
       <div className="df">
@@ -15,7 +17,7 @@ const CartItem = ({ product }) => {
               Name : <span>{product.name}</span>
             </span>
             <span className="cart-item-name">
-              Price : <span>${product.price}</span>
+              Price : <span>Rs. {product.price}</span>
             </span>
             <span>Quantity</span>
             <div className="df ai-c">
@@ -35,7 +37,9 @@ const CartItem = ({ product }) => {
             </div>
           </div>
           <div>
-            <button className="cart-btn br">remove from cart</button>
+            <button onClick={handleClick} className="cart-btn br">
+              remove from cart
+            </button>
           </div>
         </div>
       </div>
