@@ -23,6 +23,18 @@ textarea {
   resize: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 .link {
   text-decoration: none;
   cursor: pointer;
@@ -30,6 +42,9 @@ textarea {
 
 .p-1 {
   padding: 1rem;
+}
+.ml-1 {
+  margin-left: 1rem;
 }
 
 .mb-1 {
@@ -85,6 +100,7 @@ textarea {
 }
 
 .input {
+  font-size: 1rem;
   margin-bottom: 1rem;
   width: 100%;
   border: none;
@@ -110,39 +126,6 @@ textarea {
   overflow: hidden;
 }
 
-/* .app::before {
-  content: "Hello";
-  width: 100vw;
-  font-size: 6rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: absolute;
-  background-color: black;
-  color: #fff;
-  z-index: 1000;
-  animation: fade-out;
-  animation-duration: 4s;
-  animation-delay: 8s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fade-out {
-  0% { right: 0 }
-  100% { right: -3000px }
-} 
-  0% {
-    right: 0;
-  }
-  100% {
-    right: -3000px;
-  }
-}
-*/
-
-/* animations */
 
 @keyframes slide-left {
   0% {
@@ -163,4 +146,13 @@ textarea {
   100% {
     transform: scale(1);
   }
+}
+
+/*responsiveness*/
+@media only screen and (max-width: 420px){
+  body {
+    font-size: 1rem;
+  }
+  
+
 }

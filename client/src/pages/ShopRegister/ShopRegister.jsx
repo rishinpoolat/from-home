@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-
 import { createShop } from "../../redux/features/shopSlice";
-// import { updateUser } from "../../redux/features/authSlice";
-import "./shopRegister.css";
 import { useNavigate } from "react-router-dom";
+import "./shopRegister.css";
 
 const ShopRegister = () => {
   const dispatch = useDispatch();
@@ -17,13 +15,7 @@ const ShopRegister = () => {
   }, []);
 
   const [file, setFile] = useState(null);
-  // TODO data to be pass in formData eg: (name, email, password?, hasShop)
-  const [formData, setFormData] = useState({
-    name: user?.result?.name,
-    email: user?.result?.email,
-    hasShop: user?.result?.hasShop,
-  });
-  // console.log(formData.result.hasShop);
+
   const [shopData, setShopData] = useState({
     userId: "",
     shopName: "",
@@ -52,8 +44,7 @@ const ShopRegister = () => {
       shopData.banner = url;
       shopData.userId = user?.result?._id;
       dispatch(createShop({ shopData, navigate }));
-      // setFormData({ ...formData, hasShop: true });
-      // dispatch(updateUser({formData, user.result?._id}));
+
     } catch (error) {
       console.log(error);
     }

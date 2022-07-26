@@ -136,13 +136,11 @@ export default function Auth() {
             cookiePolicy="single_host_origin"
           />
         </form>
-        <footer className="footer">
           <button className="active-button" onClick={switchMode}>
             {isSignup
               ? "Already have an account? Sign In"
               : "Dont't have an account? Sign Up"}
           </button>
-        </footer>
       </div>
     </div>
   );

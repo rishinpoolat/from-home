@@ -38,17 +38,17 @@ export const getShop = createAsyncThunk(
   }
 );
 
-// export const getToursByUser = createAsyncThunk(
-//   "tour/getToursByUser",
-//   async (userId, { rejectWithValue }) => {
-//     try {
-//       const response = await api.getToursByUser(userId);
-//       return response.data;
-//     } catch (err) {
-//       return rejectWithValue(err.response.data);
-//     }
-//   }
-// );
+export const fetchUserShops = createAsyncThunk(
+  "tour/getToursByUser",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await api.getUserShops(id);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 
 // export const deleteTour = createAsyncThunk(
 //   "tour/deleteTour",
@@ -92,7 +92,7 @@ const shopSlice = createSlice({
     },
     [createShop.fulfilled]: (state, action) => {
       state.loading = false;
-      state.shops = [action.payload];
+      state.shops = [...state.shops, action.payload];
     },
     [createShop.rejected]: (state, action) => {
       state.loading = false;
@@ -120,17 +120,17 @@ const shopSlice = createSlice({
       state.loading = false;
       state.error = action.payload.message;
     },
-    // [getToursByUser.pending]: (state, action) => {
-    //   state.loading = true;
-    // },
-    // [getToursByUser.fulfilled]: (state, action) => {
-    //   state.loading = false;
-    //   state.userTours = action.payload;
-    // },
-    // [getToursByUser.rejected]: (state, action) => {
-    //   state.loading = false;
-    //   state.error = action.payload.message;
-    // },
+    [fetchUserShops.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [fetchUserShops.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.userShops = action.payload;
+    },
+    [fetchUserShops.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
     // [deleteTour.pending]: (state, action) => {
     //   state.loading = true;
     // },

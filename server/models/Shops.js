@@ -11,7 +11,7 @@ const shopSchema = mongoose.Schema(
       required: true,
     },
     district: {
-      type: Array,
+      type: String,
       required: true,
     },
     ownerName: {
@@ -37,10 +37,6 @@ const shopSchema = mongoose.Schema(
     description: {
       type: String,
       default: "",
-    },
-    cakes: {
-      type: Array,
-      required: true,
     },
   },
   { timestamps: true }

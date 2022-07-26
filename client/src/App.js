@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import { ToastContainer } from "react-toastify";
-
 import Navbar from "./components/Navbar/Navbar";
 import Auth from "./components/Auth/Auth";
-import AdminSidebar from "./components/AdminSidebar/AdminSidebar";
+import AdminSidebar from "./components/Admin/AdminSidebar/AdminSidebar";
 import ShopRegister from "./pages/ShopRegister/ShopRegister";
 import HomePage from "./pages/HomePage/HomePage";
 import SingleShop from "./pages/SingelShop/SingleShop";
@@ -13,12 +12,9 @@ import UserProfile from "./pages/UserProfile/UserProfile";
 import ShopEdit from "./pages/ShopEdit/ShopEdit";
 import RecipiePage from "./pages/RecipiePage/RecipiePage";
 import Cart from "./pages/Cart/Cart";
-import Products from "./pages/Admin/Products/Products";
-import Orders from "./pages/Admin/Orders/Orders";
-import Add from "./pages/Admin/Products/Add/Add";
-import Admin from "./pages/Admin/Admin";
 import { getShops } from "./redux/features/shopSlice";
 import { getCakes } from "./redux/features/cakeSlice";
+import AdminShop from "./components/Admin/AdminShop/AdminShop";
 import "./style.css";
 
 const App = () => {
@@ -57,37 +53,20 @@ const App = () => {
           <Route path="/cart" element={<Cart />}></Route>
           {/* admin dashboard */}
           <Route
-            path="/admin/products/add"
+            path={`/admin/user/${user?.result?._id}/shop/:id`}
             element={
               <div className="df">
-                <AdminSidebar className="admin-sidebar" />
-                <Add />
+                <AdminSidebar id={user?.result?.id} className="admin-sidebar" />
+                <AdminShop/>
               </div>
             }
           ></Route>
           <Route
-            path="/admin/products"
+            path={`/admin/user/:id`}
             element={
               <div className="df">
-                <AdminSidebar className="admin-sidebar" />
-                <Products />
-              </div>
-            }
-          ></Route>
-          <Route
-            path="/admin"
-            element={
-              <div className="df">
-                <Admin />
-              </div>
-            }
-          ></Route>
-          <Route
-            path="/admin/orders"
-            element={
-              <div className="df">
-                <AdminSidebar />
-                <Orders />
+                <AdminSidebar id={user?.result?.id} className="admin-sidebar" />
+                <AdminShop/>
               </div>
             }
           ></Route>

@@ -1,0 +1,35 @@
+.admin-shop {
+padding: 1rem 2rem;
+position: relative;
+
+}
+
+.admin-shop .active-button {
+    margin-top: 1rem;
+}
+
+.addcake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+
+.addcake-wrapper {
+    width: 350px;
+    background-color: lightgray;
+}
+
+.addcake-wrapper > div {
+    justify-content: flex-end;
+}
+
+.close-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+}

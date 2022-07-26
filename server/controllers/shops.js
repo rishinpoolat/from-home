@@ -31,6 +31,44 @@ export const getShop = async (req, res) => {
   }
 };
 
+// get shops of a user 
+export const getShopsOfUser = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const shops = await Shops.find({userId: id});
+    res.status(200).json(shops);
+  } catch (error) {
+    res.status(500).json({message: error.message});
+  }
+};
+
+// update/edit shop
+export const updateShop = async (req, res) => {
+  try {
+    const updatedShop = await Shops.findByIdAndUpdate(req.params.id, {
+      $set: req.body,
+    },
+    {new: true});
+    res.status(200).json(updatedShop)
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
+
+// delete shop
+export const deleteShop = async (req, res) => {
+  try {
+    await Shops.findByIdAndDelete(req.params.id);
+    res.status(200).json("Shop has been deleted!!!")
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
+
+
+
+// 62b1d0cc033abbad4efeea48
+
 // TODO
 // update shop
 // delete shop

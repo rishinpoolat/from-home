@@ -57,7 +57,7 @@ const recipeSlice = createSlice({
     },
     [createRecipe.fulfilled]: (state, action) => {
       state.loading = false;
-      state.recipes = [action.payload];
+      state.recipes = [...state.recipes, action.payload];
     },
     [createRecipe.rejected]: (state, action) => {
       state.loading = false;
