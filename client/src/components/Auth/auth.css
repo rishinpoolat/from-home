@@ -7,6 +7,7 @@
 }
 
 .loginpage-container {
+  width: 350px;
   padding: 1rem 2rem;
   animation: pop 0.5s ease-in-out;
 }

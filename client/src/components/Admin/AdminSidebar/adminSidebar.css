@@ -2,7 +2,15 @@
     width: 280px;
     background-color: #fff;
     height: 90vh;
-    /* position: fixed; */
+}
+
+.admin-sidebar h2 {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.admin-sidebar h2:hover {
+    background-color: #FAD4D4;
 }
 
 .admin-sidebar-card {

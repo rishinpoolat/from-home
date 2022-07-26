@@ -12,19 +12,21 @@ API.interceptors.request.use((req) => {
 });
 
 // AUTHENTICATION
-export const signIn = (formData) => API.post("/user/signin", formData);
+export const signIn = (userData) => API.post("/user/signin", userData);
 export const signUp = (formData) => API.post("/user/signup", formData);
-export const updateUser = (formData, id) => API.put(`/users/${id}`, formData);
+export const updateUser = (formData, id) => API.put(`/user/${id}`, formData);
 
 // SHOPS
 export const fetchShops = () => API.get("/shops");
 export const fetchShop = (id) => API.get(`/shops/${id}`);
 export const createShop = (shop) => API.post(`/shops`, shop);
+export const getUserShops = (id) => API.get(`/shops/user/${id}`);
 
 // CAKES
 export const fetchCakes = () => API.get("/cakes");
 export const fetchCake = (id) => API.get(`/cakes/${id}`);
 export const createCake = (cake) => API.post(`/cakes`, cake);
+export const getCakesOfShop = (id) => API.get(`/cakes/shop/${id}`);
 
 // RECIPES
 export const fetchRecipes = () => API.get("/recipe");

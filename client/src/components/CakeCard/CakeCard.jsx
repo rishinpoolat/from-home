@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
 import { BsStarHalf } from "react-icons/bs";
 import { addProduct } from "../../redux/features/cartSlice";
-import { useState } from "react";
 import "./cakeCard.css";
 
 export default function CakeCard({ cake }) {
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
+  const quantity = 1;
 
   const handleClick = () => {
     dispatch(addProduct({ ...cake, quantity }));

@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CartItem from "../../components/CartItem/CartItem";
 import "./cart.css";
 
 const Cart = () => {
-  const dispatch = useDispatch();
   // get all cart items
   const cart = useSelector((state) => state.cart);
   console.log(cart);

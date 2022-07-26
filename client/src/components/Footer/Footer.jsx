@@ -1,10 +1,10 @@
-import "./footer.css";
 import {
   AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineLinkedin,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import "./footer.css";
 
 const Footer = () => {
   return (

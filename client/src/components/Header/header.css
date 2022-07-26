@@ -31,3 +31,9 @@
 .header-right {
   flex: 1;
 }
+
+.header-title {
+  text-align: center;
+  overflow: hidden;
+  height: 60px;
+}

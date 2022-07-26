@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const cakesSchema = mongoose.Schema(
   {
+    shopId: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true,

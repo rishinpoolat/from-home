@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import {AiOutlineArrowRight} from 'react-icons/ai'
+import { fetchUserShops } from "../../redux/features/shopSlice";
 import "./userProfile.css";
+import Loading from "../../components/Loading/Loading";
 
 export default function UserProfile() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const [user, setUser] = useState();
+  const {userShops, loading} = useSelector((state) => state.shops);
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, []);
-
-  const { id } = useParams();
-  console.log(id);
+    dispatch(fetchUserShops(id));
+  }, [dispatch, id]);
+  console.log(userShops.length);
+  
+  loading && <Loading/>
 
   return (
     <div className="userprofile df fd-c ai-c">
@@ -32,12 +40,13 @@ export default function UserProfile() {
         </div>
       </div>
       <footer className="footer">
-        <h3>Want to Start a Shop or Already have Shops</h3>
+        <h3>{userShops.length ? `Already have Shops` : `Want to Start a Shop` }</h3>
         <Link
-          className="shop-btn link"
-          to={user?.result?.hasShop ? `/admin/products` : `/shopregister`}
+          className="shop-btn link df ai-c jcc"
+          to={userShops.length ? `/admin/user/${id}` : `/shopregister`}
         >
-          Start a shop
+          {userShops.length ? `Go to my admin DashBoard` : `Start a New Shop` }
+          <span className="ml-1 df"><AiOutlineArrowRight/></span>
         </Link>
       </footer>
     </div>
