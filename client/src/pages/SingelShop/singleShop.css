@@ -4,7 +4,7 @@
 
 .singleshop-banner-img {
   width: 100%;
-  height: 22rem;
+  height: 30rem;
   object-fit: cover;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .singleshop-menu {
+  gap: 5rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
-  justify-content: center;
+  margin: 2rem 0;
 }
 
 .singleshop-rating {

@@ -1,6 +1,6 @@
 .admin-cakecard {
     margin-top: 1rem;
-    height: 80px;
+    /* height: 80px; */
     padding: 1rem;
 }
 
@@ -24,4 +24,8 @@
 .admin-cakecard-span{
     font-weight: bold;
     color: #f47c7c;
+}
+
+.admin-cakecard form {
+    margin-top: 2rem;
 }

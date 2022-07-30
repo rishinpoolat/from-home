@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import {MdClose} from 'react-icons/md'
 import { getShop } from '../../../redux/features/shopSlice';
 import CakeCard from '../CakeCard/CakeCard';
+import Loading from '../../Loading/Loading'
 import './adminshop.css'
 import axios from 'axios';
 import { addNewCake, fetchCakesOfShop } from '../../../redux/features/cakeSlice';
@@ -12,15 +13,14 @@ const AdminShop = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const {shop} = useSelector((state) => state.shops);
-    const {shopCakes} = useSelector((state) => state.cakes);
+    const {shopCakes, loading} = useSelector((state) => state.cakes);
     const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
-        dispatch(getShop(id));
         dispatch(fetchCakesOfShop(id));
+        dispatch(getShop(id));
     },[dispatch, id]);
-    console.log(shopCakes);
 
-  return (
+  return loading ? ( <><Loading/></>) : (
     <div className='admin-shop w-100'>
     {
         <div className='admin-shop-details w-100 br bd-0 df p-1 fd-c mb-1'>
@@ -36,7 +36,7 @@ const AdminShop = () => {
         <div className='text-center flex-1 p-1'>
             <h3>Products</h3>
             <div className='df fd-c'>
-                {shopCakes.map((cake) => (
+                {shopCakes.length > 0 && shopCakes[0]?.map((cake) => (
                     <div key={cake._id}>
                         <CakeCard cake={cake}/>
                     </div>
@@ -48,14 +48,14 @@ const AdminShop = () => {
             <h3>Orders</h3>
         </div>
         </div>
-        {isOpen && <AddCake isOpen={isOpen} id={id} setIsOpen={setIsOpen}/>}
+        {isOpen && <AddCake isAdd={true} id={id} setIsOpen={setIsOpen}/>}
     </div>
   )
 }
 
 export default AdminShop
 
-const AddCake = ({isOpen, setIsOpen, id}) => {
+const AddCake = ({ setIsOpen, id, isAdd}) => {
     const dispatch = useDispatch();
     const [file, setFile] = useState(null)
     const [cakeData, setCakeData] = useState({
@@ -91,7 +91,7 @@ const AddCake = ({isOpen, setIsOpen, id}) => {
                 <input onChange={(e) => setCakeData({ ...cakeData, price: parseInt(e.target.value) })} className='input' placeholder='price'/>
                 <label className='mr-1'>Image</label>
                 <input onChange={(e) => setFile(e.target.files[0])} type='file'/>
-                <button onClick={handleSubmit} className='active-button'>Add Cake</button>
+                <button onClick={isAdd && handleSubmit} className='active-button'>Add Cake</button>
             </form>
         </div>
         </div>

@@ -27,6 +27,8 @@ export const fetchCakes = () => API.get("/cakes");
 export const fetchCake = (id) => API.get(`/cakes/${id}`);
 export const createCake = (cake) => API.post(`/cakes`, cake);
 export const getCakesOfShop = (id) => API.get(`/cakes/shop/${id}`);
+export const deleteCake = (id) => API.delete(`/cakes/${id}`);
+export const updateCake = (id, cakeData) => API.put(`/cakes/${id}`, cakeData);
 
 // RECIPES
 export const fetchRecipes = () => API.get("/recipe");

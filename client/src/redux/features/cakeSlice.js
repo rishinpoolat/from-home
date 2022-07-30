@@ -47,6 +47,32 @@ export const fetchCakesOfShop = createAsyncThunk( "cakes/getCakesOfShop", async 
   }
 }) 
 
+export const removeCake = createAsyncThunk( "cakes/deleteCake",async (id,{rejectWithValue}) => {
+  try{
+    await api.deleteCake(id);
+    alert("cake deleted");
+  }
+  catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+})
+
+export const renewCake = createAsyncThunk("cakes/updateCake",async (id, {cakeData},
+  {rejectWithValue}) => {
+    try{
+      console.log(id);
+      console.log(cakeData);
+      const res = await api.updateCake(id, {cakeData});
+      alert("details updates ");
+      return res.data; 
+    }
+    catch (error){
+      return rejectWithValue(error.response.data);
+    }
+  })
+
+
+
 const cakeSlice = createSlice({
   name: "cake",
   initialState: {
@@ -62,7 +88,7 @@ const cakeSlice = createSlice({
     },
     [addNewCake.fulfilled]: (state, action) => {
       state.loading = false;
-      state.cakes = [action.payload];
+      state.cakes = [...state.cakes,action.payload];
     },
     [addNewCake.rejected]: (state, action) => {
       state.loading = false;
@@ -95,30 +121,30 @@ const cakeSlice = createSlice({
     },
     [fetchCakesOfShop.fulfilled]: (state, action) => {
       state.loading = false;
-      state.shopCakes = action.payload;
+      state.shopCakes = [action.payload];
     },
     [fetchCakesOfShop.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
-    // [deleteTour.pending]: (state, action) => {
-    //   state.loading = true;
-    // },
-    // [deleteTour.fulfilled]: (state, action) => {
-    //   state.loading = false;
-    //   console.log("action", action);
-    //   const {
-    //     arg: { id },
-    //   } = action.meta;
-    //   if (id) {
-    //     state.userTours = state.userTours.filter((item) => item._id !== id);
-    //     state.tours = state.tours.filter((item) => item._id !== id);
-    //   }
-    // },
-    // [deleteTour.rejected]: (state, action) => {
-    //   state.loading = false;
-    //   state.error = action.payload.message;
-    // },
+    [removeCake.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [removeCake.fulfilled]: (state, action) => {
+      state.loading = false;
+      console.log("action", action);
+      const {
+        arg: { id },
+      } = action.meta;
+      if (id) {
+        state.shopCakes = state.shopCakes.filter((item) => item._id !== id);
+        state.cakes = state.cakes.filter((item) => item._id !== id);
+      }
+    },
+    [removeCake.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = "action.payload.message";
+    },
     // [updateTour.pending]: (state, action) => {
     //   state.loading = true;
     // },

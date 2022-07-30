@@ -21,3 +21,11 @@
 .admin-sidebar-card:hover {
     background-color: rgb(240, 240, 240);
 }
+
+.add-new-shop {
+    border-radius: 10px;
+    color: white;
+    background-color: #F47C7C;
+    padding: 1rem;
+    text-align: center;
+}

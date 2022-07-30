@@ -96,7 +96,7 @@ const shopSlice = createSlice({
     },
     [createShop.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = "action.payload.message";
     },
     [getShops.pending]: (state, action) => {
       state.loading = true;
@@ -118,7 +118,7 @@ const shopSlice = createSlice({
     },
     [getShop.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = "action.payload.message";
     },
     [fetchUserShops.pending]: (state, action) => {
       state.loading = true;
@@ -129,7 +129,7 @@ const shopSlice = createSlice({
     },
     [fetchUserShops.rejected]: (state, action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = "action.payload.message";
     },
     // [deleteTour.pending]: (state, action) => {
     //   state.loading = true;

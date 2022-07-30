@@ -13,14 +13,14 @@ const Cart = () => {
 
   return (
     <div className="cart df fd-c ai-c">
-      <h1 className="cart-heading">my cart</h1>
+      <h1 className="cart-heading">MY CART</h1>
       {cart.products.map((item) => (
         <CartItem key={item._id} product={item} />
       ))}
 
       <div className="cart-bottom">
-        <h2>sub total = Rs. {cart.total} </h2>
-        <button className="active-button">proceed to pay</button>
+        <h2>Sub Total = Rs. {cart.total} </h2>
+        <button className="active-button cart-button">Proceed to Pay</button>
       </div>
     </div>
   );

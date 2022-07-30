@@ -25,6 +25,7 @@ const AdminSidebar = () => {
     to={`/admin/user/${id}/shop/${shop._id}`}><RiShoppingBag3Fill className='mr-0'/>{shop.shopName}</Link>
 
     ))}
+    <Link to="/shopregister" className='link add-new-shop bs-1'>Add New Shop +</Link>
     </div>
   )
 }

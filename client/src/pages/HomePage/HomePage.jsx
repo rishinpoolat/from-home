@@ -7,7 +7,6 @@ import Header from "../../components/Header/Header";
 import Services from "../../components/Services/Services";
 
 export default function HomePage({ shops, cakes }) {
-  console.log(cakes);
   return !shops.shops.length ? (
   <Loading />
 ) : (
@@ -17,7 +16,7 @@ export default function HomePage({ shops, cakes }) {
       <Services />
       <div className="home-main df fd-c">
         <header className="home-header">
-          <h1>Top Trending Cakes</h1>
+          <h1 className="h1-font">TOP TRENDING CAKES</h1>
           <div className="homepage-trending df">
             {cakes?.cakes[0]?.map((cake) => (
               <div className="home-header-card bs-0" key={cake?._id}>
@@ -26,7 +25,7 @@ export default function HomePage({ shops, cakes }) {
             ))}
           </div>
         </header>
-        <h1>Popular Shops</h1>
+        <h1 className="h1-font">POPULAR SHOPS</h1>
         <div className="home-shops df">
           {shops.shops.map((shop) => (
             <div key={shop?._id}>

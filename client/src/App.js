@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar/Navbar";
 import Auth from "./components/Auth/Auth";
 import AdminSidebar from "./components/Admin/AdminSidebar/AdminSidebar";
@@ -34,7 +35,6 @@ const App = () => {
     <Router>
       <div className="app">
         <Navbar />
-        {/* <ToastContainer /> */}
         <Routes>
           <Route
             exact
@@ -70,6 +70,18 @@ const App = () => {
               </div>
             }
           ></Route>
+        {/* <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+
+        /> */}
         </Routes>
       </div>
     </Router>

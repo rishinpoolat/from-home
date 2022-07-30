@@ -23,9 +23,12 @@
 .home-header-card:not(:last-child) {
   margin-right: 3rem;
 }
-
+.h1-font {
+  font-family: "DM Sans", sans-serif;
+}
 .home-shops {
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 2rem 0;
+  gap: 5rem;
 }
