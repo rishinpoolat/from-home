@@ -1,18 +1,12 @@
 import express from "express";
 import {
-  getCart,
-  createCart,
-  getCarts,
-  updateCart,
-  deleteCart,
+  addCartItems,
+  getCartItems,
 } from "../controllers/cart.js";
 
 const router = express.Router();
 
-router.get("/:id", getCart);
-router.get("/", getCarts);
-router.post("/", createCart);
-router.put("/", updateCart);
-router.delete("/:id", deleteCart);
+router.post('/:userId', addCartItems)
+router.get('/:id', getCartItems)
 
 export default router;
