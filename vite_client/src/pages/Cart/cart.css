@@ -1,0 +1,26 @@
+.cart{
+    padding: 1rem 6rem;
+}
+
+.cart-left{
+    flex: 3;
+}
+
+.cart h1{
+    margin-bottom: 1rem;
+}
+
+.cart-right-container{
+    margin: 3rem 1.5rem;
+    padding: 1rem;
+    flex: 1;
+    height: 100%;
+}
+
+.cart-right-container .active-button {
+    margin-top: 1rem;
+}
+
+.cart-right-container p, .cart-right-container h4 {
+    margin-top: 0.5rem;
+}

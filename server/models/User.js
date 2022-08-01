@@ -22,10 +22,6 @@ const  userSchema = mongoose.Schema(
     id: {
       type: String
     }, 
-    hasShop: {
-      type: Boolean,
-      default: false
-    }
   },
   { timestamps: true }
 );

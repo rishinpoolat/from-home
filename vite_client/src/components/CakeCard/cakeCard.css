@@ -1,0 +1,43 @@
+.cakecard {
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+}
+
+.cakecard:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.cakecard-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cakecard-action {
+  width: 100%;
+}
+
+.cakecard-action .active-button {
+  border-radius: 0;
+  margin-top: 0.3rem;
+}
+
+.cake-name {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.cakecard-info {
+  padding: 0.2rem 0.5rem;
+}
+
+.cakecard-rating span {
+  margin-right: 0.3rem;
+}
+
+.star-icon {
+  color: #f47c7c;
+}
