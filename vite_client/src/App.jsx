@@ -19,19 +19,19 @@ import AdminShop from "./components/Admin/AdminShop/AdminShop";
 import "./style.css";
 import GetStarted from "./pages/Admin/GetStarted/GetStarted";
 import { fetchCart } from "./redux/features/cartSlice";
+import CheckOut from "./components/CheckOut/CheckOut";
 
 const App = () => {
   const dispatch = useDispatch();
   const shops = useSelector((state) => state.shops);
   const cakes = useSelector((state) => state.cakes);
-  const {cart} = useSelector((state) => state.cart);
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   useEffect(() => {
     dispatch(getShops());
     dispatch(getCakes());
-    user && dispatch(fetchCart(user.result._id))
+    user && dispatch(fetchCart(user.result._id));
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [dispatch]);
 
@@ -55,13 +55,14 @@ const App = () => {
           <Route path="/shopedit" element={<ShopEdit />}></Route>
           <Route path="/recipe" element={<RecipiePage user={user} />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/checkout" element={<CheckOut user={user} />}></Route>
           {/* admin dashboard */}
           <Route
             path={`/admin/user/${user?.result?._id}/shop/:id`}
             element={
               <div className="df">
                 <AdminSidebar id={user?.result?.id} className="admin-sidebar" />
-                <AdminShop/>
+                <AdminShop />
               </div>
             }
           ></Route>
@@ -70,22 +71,21 @@ const App = () => {
             element={
               <div className="df">
                 <AdminSidebar id={user?.result?.id} className="admin-sidebar" />
-                <GetStarted/>
+                <GetStarted />
               </div>
             }
           ></Route>
         </Routes>
         <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
         />
       </div>
     </Router>

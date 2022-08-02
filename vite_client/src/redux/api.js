@@ -36,10 +36,12 @@ export const fetchRecipe = (id) => API.get(`/recipe/${id}`);
 export const createRecipe = (recipe) => API.post(`/recipe`, recipe);
 
 // CART
-export const addToCart = ({userId, productId, quantity}) => API.post(`/cart/${userId}`, {productId, quantity});
+export const addToCart = ({ userId, productId, quantity }) =>
+  API.post(`/cart/${userId}`, { productId, quantity });
 export const getCart = (id) => API.get(`/cart/${id}`);
-export const deleteFromCart = (userId, itemId) => API.delete(`/cart/${userId}/${itemId}`)
+export const deleteFromCart = (userId, itemId) =>
+  API.delete(`/cart/${userId}/${itemId}`);
 
 // ORDER
-export const checkout = ({id, source}) => API.post(`/order/${id}`, {source});
+export const checkout = (id, address) => API.post(`/order/${id}`, address);
 export const getOrders = (id) => API.post(`/order/${id}`);

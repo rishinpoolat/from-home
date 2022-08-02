@@ -3,9 +3,10 @@ import * as api from "../api";
 
 export const cartCheckout = createAsyncThunk(
   "order/checkout",
-  async ({id, source}) => {
+  async (id, address) => {
     try {
-      const response = await api.checkout({userId, source});
+      console.log(address);
+      const response = await api.checkout(id, address);
       return response.data;
     } catch (err) {
       console.log(err);
@@ -30,7 +31,7 @@ const orderSlice = createSlice({
   initialState: {
     orders: [],
     error: "",
-    loading: false
+    loading: false,
   },
   extraReducers: {
     [cartCheckout.pending]: (state, action) => {
@@ -38,24 +39,24 @@ const orderSlice = createSlice({
     },
     [cartCheckout.fulfilled]: (state, action) => {
       state.loading = false;
-      state.orders = [...state.orders, action.payload]
+      state.orders = [...state.orders, action.payload];
     },
     [cartCheckout.rejected]: (state, action) => {
       state.loading = false;
-      state.error = 'action.payload.message';
+      state.error = "action.payload.message";
     },
     [fetchOrders.pending]: (state, action) => {
       state.loading = true;
     },
     [fetchOrders.fulfilled]: (state, action) => {
       state.loading = false;
-      state.orders = [...state.orders, action.payload]
+      state.orders = [...state.orders, action.payload];
     },
     [fetchOrders.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload.message;
     },
-  }
+  },
 });
 
 export default orderSlice.reducer;
