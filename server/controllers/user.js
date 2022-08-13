@@ -7,7 +7,6 @@ import User from "../models/User.js";
 // login
 export const signin = async (req, res) => {
   const { email, password } = req.body;
-  // const key = process.env.TOKEN_KEY;
 
   try {
     const existingUser = await User.findOne({ email });
@@ -25,7 +24,7 @@ export const signin = async (req, res) => {
 
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "FISH",
+      process.env.TOKEN_KEY,
       { expiresIn: "1hr" }
     );
 
@@ -58,9 +57,13 @@ export const signup = async (req, res) => {
       hasShop,
     });
 
-    const token = jwt.sign({ email: result.email, id: result._id }, "FISH", {
-      expiresIn: "1hr",
-    });
+    const token = jwt.sign(
+      { email: result.email, id: result._id },
+      process.env.TOKEN_KEY,
+      {
+        expiresIn: "1hr",
+      }
+    );
 
     res.status(200).json({ result, token });
   } catch (error) {
