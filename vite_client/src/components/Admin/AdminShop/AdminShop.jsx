@@ -5,7 +5,7 @@ import { getShop } from '../../../redux/features/shopSlice';
 import CakeCard from '../CakeCard/CakeCard';
 import Loading from '../../Loading/Loading'
 import './adminshop.css'
-import AddCake from '../AddCake/addCake';
+import AddCake from '../AddCake/AddCake';
 import { fetchCakesOfShop } from '../../../redux/features/cakeSlice';
 
 const AdminShop = () => {
