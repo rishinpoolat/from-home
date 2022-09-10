@@ -1,7 +1,8 @@
-import headerImg from "../../assets/header.png";
 import "./header.css";
 
 const Header = () => {
+  const headerImg =
+    "https://res.cloudinary.com/ziifoo/image/upload/v1662799747/header_cnpqrx.png";
   return (
     <header className="header df">
       <div className="header-left df fd-c ai-c jcc">
