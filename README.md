@@ -14,7 +14,7 @@ You will need `node` and `npm` installed globally on your machine.
 Clone down this repository. 
 
 ```
- git clone https://github.com/muhammedShamal/fromhome
+ git clone https://github.com/rishinpoolat/from-home
 ```
 change directory to server
 ```
